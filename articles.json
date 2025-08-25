@@ -1,23 +1,34 @@
 [
   {
-    "title": "Nouveau rapport sur la sécurité routière",
+    "title": "Nouveaux radars pédagogiques",
     "date": "2025-08-20",
-    "category": "Recherche",
-    "excerpt": "Analyse complète des comportements routiers en 2025.",
-    "icon": "📊"
+    "category": "Actualités & Innovations Routières",
+    "excerpt": "Une étude récente démontre l'impact des radars pédagogiques sur la sécurité.",
+    "icon": "🚦",
+    "url": "articles/radars-pedagogiques.html"
   },
   {
-    "title": "Projet innovant sur la signalisation",
+    "title": "Projet de recherche sur la signalisation intelligente",
+    "date": "2025-08-18",
+    "category": "Projets de Recherche",
+    "excerpt": "Analyse de l’efficacité des panneaux connectés sur la prévention des accidents.",
+    "icon": "🔬",
+    "url": "articles/signalisation-intelligente.html"
+  },
+  {
+    "title": "Top 5 des apps de navigation sécurisée",
     "date": "2025-08-15",
-    "category": "Innovation",
-    "excerpt": "Un projet pilote sur l’efficacité des nouveaux panneaux lumineux.",
-    "icon": "🚦"
+    "category": "Outils & Solutions",
+    "excerpt": "Comparatif des meilleures applications de navigation intégrant la sécurité routière.",
+    "icon": "📱",
+    "url": "articles/apps-navigation-securisee.html"
   },
   {
-    "title": "Impact des technologies connectées",
+    "title": "Notre mission : rendre la sécurité routière accessible",
     "date": "2025-08-10",
-    "category": "Technologie",
-    "excerpt": "Les véhicules connectés changent notre rapport à la route.",
-    "icon": "🚘"
+    "category": "Notre Mission",
+    "excerpt": "Découvrez comment nous partageons conseils et ressources pour tous.",
+    "icon": "🎯",
+    "url": "articles/notre-mission.html"
   }
 ]
