@@ -1,92 +1,96 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>4Safe+ - Sécurité Routière</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4Safe+ - Sécurité Routière</title>
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- AOS Animations -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+<!-- AOS -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-  </style>
+<style>
+body { font-family: 'Inter', sans-serif; }
+a { text-decoration: none; }
+</style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-50">
 
-  <!-- Header / Navigation -->
-  <header class="bg-white shadow sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
-      <h1 class="text-2xl font-bold text-blue-800">4Safe+</h1>
-      <nav class="space-x-4">
-        <a href="index.html" class="font-semibold text-gray-700 hover:text-blue-800">Accueil</a>
-        <a href="articles.html" class="font-semibold text-gray-700 hover:text-blue-800">Articles</a>
-      </nav>
-    </div>
-  </header>
+<!-- Header -->
+<header class="bg-gradient-to-r from-blue-800 to-green-500 text-white sticky top-0 z-50 shadow-md">
+  <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+    <h1 class="text-3xl font-bold">4Safe+</h1>
+    <nav class="space-x-6 font-semibold text-lg">
+      <a href="index.html" class="hover:text-gray-200">Accueil</a>
+      <a href="articles.html" class="hover:text-gray-200">Articles</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-blue-700 to-green-500 text-white py-32 px-4 rounded-b-3xl text-center" data-aos="fade-up">
-    <h2 class="text-4xl md:text-5xl font-bold mb-4">Restez en sécurité sur la route 🚦</h2>
-    <p class="text-lg md:text-xl opacity-90 mb-8">Chaque semaine, 4Safe+ vous apporte informations fiables et innovations pour améliorer la sécurité routière.</p>
-    <a href="articles.html" class="inline-block bg-white text-blue-800 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">📖 Voir tous les articles</a>
-  </section>
+<!-- Hero Section -->
+<section class="text-center py-32 px-4 bg-white rounded-b-3xl shadow-lg" data-aos="fade-up">
+  <h2 class="text-5xl font-bold text-gray-800 mb-4">Restez en sécurité sur la route 🚦</h2>
+  <p class="text-lg text-gray-600 mb-8">Chaque semaine, 4Safe+ vous apporte informations fiables et innovations pour améliorer la sécurité routière.</p>
+  <a href="articles.html" class="inline-block px-8 py-3 bg-blue-800 text-white rounded-full font-semibold hover:bg-blue-700 transition">📖 Voir tous les articles</a>
+</section>
 
-  <!-- Articles Aperçu -->
-  <section class="max-w-7xl mx-auto py-16 px-4">
-    <h3 class="text-3xl font-bold text-center mb-12">📖 Articles Récents</h3>
-    <div id="post-grid" class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      <!-- Les articles JSON seront insérés ici -->
-    </div>
-    <div class="text-center mt-8">
-      <a href="articles.html" class="inline-block bg-blue-800 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition">→ Voir tous les articles</a>
-    </div>
-  </section>
+<!-- Articles Sections -->
+<div id="categories-container" class="max-w-7xl mx-auto py-16 px-4 space-y-16">
+  <!-- Sections injectées via JS -->
+</div>
 
-  <!-- AOS Animations -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ once: true });</script>
+<!-- Footer -->
+<footer class="bg-gray-800 text-white text-center py-12">
+  <h3 class="text-xl font-bold">4Safe+</h3>
+  <p class="mt-2">© 2025 4Safe+ - Votre référence en sécurité routière</p>
+</footer>
 
-  <!-- Script pour charger articles.json -->
-  <script>
-    function timeAgo(dateString) {
-      const now = new Date();
-      const date = new Date(dateString);
-      const diff = Math.floor((now - date) / (1000*60*60*24));
-      if(diff===0) return "Aujourd'hui";
-      if(diff===1) return "Il y a 1 jour";
-      if(diff<7) return `Il y a ${diff} jours`;
-      return date.toLocaleDateString("fr-FR");
-    }
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({ once:true });
 
-    fetch('articles.json')
-      .then(res => res.json())
-      .then(articles => {
-        const container = document.getElementById('post-grid');
-        container.innerHTML = '';
-        const recent = articles.slice(0,3);
-        recent.forEach(article => {
-          const card = document.createElement('div');
-          card.className = 'bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden';
-          card.setAttribute('data-aos','fade-up');
-          card.innerHTML = `
-            <div class="h-48 flex items-center justify-center text-4xl bg-gray-100">${article.icon}</div>
-            <div class="p-6">
-              <div class="text-gray-500 text-sm mb-2">${timeAgo(article.date)} • ${article.category}</div>
-              <h4 class="font-bold text-xl mb-2">${article.title}</h4>
-              <p class="text-gray-700">${article.excerpt}</p>
-            </div>
-          `;
-          container.appendChild(card);
-        });
-      });
-  </script>
+function timeAgo(dateString){
+  const now=new Date(), date=new Date(dateString);
+  const diff=Math.floor((now-date)/(1000*60*60*24));
+  if(diff===0) return "Aujourd'hui";
+  if(diff===1) return "Il y a 1 jour";
+  if(diff<7) return `Il y a ${diff} jours`;
+  return date.toLocaleDateString("fr-FR");
+}
 
+fetch('articles.json')
+.then(res=>res.json())
+.then(articles=>{
+  const categories=['Actualités & Innovations Routières','Projets de Recherche','Outils & Solutions','Notre Mission'];
+  const container=document.getElementById('categories-container');
+  categories.forEach(cat=>{
+    const section=document.createElement('section');
+    section.innerHTML=`<h3 class="text-3xl font-bold mb-8">${cat}</h3><div class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3" id="${cat.replace(/\s/g,'-')}"></div>`;
+    container.appendChild(section);
+
+    const catContainer=document.getElementById(cat.replace(/\s/g,'-'));
+    articles.filter(a=>a.category===cat).forEach(article=>{
+      const card=document.createElement('a');
+      card.href=article.url;
+      card.className='bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden block';
+      card.setAttribute('data-aos','fade-up');
+      card.innerHTML=`<div class="h-48 flex items-center justify-center text-5xl bg-gray-100">${article.icon}</div>
+      <div class="p-6">
+        <div class="text-gray-500 text-sm mb-2">${timeAgo(article.date)} • ${article.category}</div>
+        <h4 class="font-bold text-xl mb-2">${article.title}</h4>
+        <p class="text-gray-700">${article.excerpt}</p>
+      </div>`;
+      catContainer.appendChild(card);
+    });
+  });
+});
+</script>
 </body>
 </html>
+
