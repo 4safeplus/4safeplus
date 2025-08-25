@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Nouveau rapport sur la sécurité routière",
+    "date": "2025-08-20",
+    "category": "Recherche",
+    "excerpt": "Analyse complète des comportements routiers en 2025.",
+    "icon": "📊"
+  },
+  {
+    "title": "Projet innovant sur la signalisation",
+    "date": "2025-08-15",
+    "category": "Innovation",
+    "excerpt": "Un projet pilote sur l’efficacité des nouveaux panneaux lumineux.",
+    "icon": "🚦"
+  },
+  {
+    "title": "Impact des technologies connectées",
+    "date": "2025-08-10",
+    "category": "Technologie",
+    "excerpt": "Les véhicules connectés changent notre rapport à la route.",
+    "icon": "🚘"
+  }
+]
