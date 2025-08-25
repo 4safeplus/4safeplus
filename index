@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4Safe+ - Votre rÃ©fÃ©rence sÃ©curitÃ© routiÃ¨re</title>
+    <title>4Safe+ - Votre référence sécurité routière</title>
     <style>
         * {
             margin: 0;
@@ -198,7 +198,7 @@
         }
 
         .content-card li:before {
-            content: "âœ“";
+            content: "✓";
             position: absolute;
             left: 0;
             color: #28a745;
@@ -334,53 +334,52 @@
             <h1>4Safe</h1>
             <div class="plus-icon">+</div>
         </div>
-        <p class="tagline">Chaque semaine, 4Safe+ vous apporte conseils, informations fiables et outils pratiques pour rester en sÃ©curitÃ© sur la route et au quotidien, que vous soyez particulier, professionnel ou institution.</p>
+        <p class="tagline">Chaque semaine, 4Safe+ vous apporte conseils, informations fiables et outils pratiques pour rester en sécurité sur la route et au quotidien, que vous soyez particulier, professionnel ou institution.</p>
     </header>
 
     <nav class="nav-bar">
         <div class="nav-container">
             <ul class="nav-menu">
-                <li><a href="#accueil">ðŸ  Accueil</a></li>
-                <li><a href="#actualites">ðŸ“° ActualitÃ©s & Innovations</a></li>
-                <li><a href="#conseils">ðŸ’¡ Conseils Pratiques</a></li>
-                <li><a href="#outils">ðŸ”§ Outils & Solutions</a></li>
-                <li><a href="#pro">ðŸ‘” Professionnels</a></li>
-                <li><a href="#ressources">ðŸ“‹ Ressources & Guides</a></li>
+                <li><a href="#accueil">🏠 Accueil</a></li>
+                <li><a href="#actualites">📰 Actualités & Innovations</a></li>
+                <li><a href="#conseils">💡 Conseils Pratiques</a></li>
+                <li><a href="#outils">🔧 Outils & Solutions</a></li>
+                <li><a href="#ressources">📋 Ressources & Guides</a></li>
             </ul>
         </div>
     </nav>
 
     <div class="container">
         <section class="hero-section">
-            <h2>Votre sÃ©curitÃ©, notre prioritÃ©</h2>
-            <p>DÃ©couvrez les derniÃ¨res innovations, conseils d'experts et outils pratiques pour amÃ©liorer la sÃ©curitÃ© routiÃ¨re au quotidien.</p>
+            <h2>Votre sécurité, notre priorité</h2>
+            <p>Découvrez les dernières innovations, conseils d'experts et outils pratiques pour améliorer la sécurité routière au quotidien.</p>
             <a href="#articles" class="cta-button">Explorer les articles</a>
         </section>
 
         <div class="stats-section">
-            <h3 style="margin-bottom: 1rem; font-size: 2rem;">4Safe+ en chiffres</h3>
+            <h3 style="margin-bottom: 1rem; font-size: 2rem;">Sécurité routière en France - Chiffres clés 2024</h3>
             <div class="stats-grid">
                 <div class="stat-item">
-                    <span class="stat-number">500+</span>
-                    <span class="stat-label">Articles publiÃ©s</span>
+                    <span class="stat-number">3,170</span>
+                    <span class="stat-label">Décès sur les routes en 2023</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">50k</span>
-                    <span class="stat-label">Lecteurs mensuels</span>
+                    <span class="stat-number">90%</span>
+                    <span class="stat-label">D'accidents évitables</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">100+</span>
-                    <span class="stat-label">Guides tÃ©lÃ©chargÃ©s</span>
+                    <span class="stat-number">-6.8%</span>
+                    <span class="stat-label">Baisse vs 2022</span>
                 </div>
             </div>
         </div>
 
         <div class="content-grid">
             <div class="content-card">
-                <h3>ðŸ“° ActualitÃ©s & Innovations RoutiÃ¨res</h3>
-                <p>Restez informÃ© des derniÃ¨res Ã©volutions en matiÃ¨re de sÃ©curitÃ© routiÃ¨re.</p>
+                <h3>📰 Actualités & Innovations Routières</h3>
+                <p>Restez informé des dernières évolutions en matière de sécurité routière.</p>
                 <ul>
-                    <li>Nouveaux Ã©quipements de sÃ©curitÃ©</li>
+                    <li>Nouveaux équipements de sécurité</li>
                     <li>Campagnes gouvernementales</li>
                     <li>Statistiques et analyses</li>
                     <li>Innovations technologiques</li>
@@ -388,115 +387,95 @@
             </div>
 
             <div class="content-card">
-                <h3>ðŸ’¡ Conseils Pratiques</h3>
+                <h3>💡 Conseils Pratiques</h3>
                 <p>Des gestes simples qui peuvent sauver des vies sur la route.</p>
                 <ul>
-                    <li>Techniques de conduite sÃ©curisÃ©e</li>
-                    <li>Distances de sÃ©curitÃ© optimales</li>
-                    <li>Vigilance et prÃ©vention</li>
+                    <li>Techniques de conduite sécurisée</li>
+                    <li>Distances de sécurité optimales</li>
+                    <li>Vigilance et prévention</li>
                     <li>Conduite par tous temps</li>
                 </ul>
             </div>
 
             <div class="content-card">
-                <h3>ðŸ”§ Outils & Solutions Existantes</h3>
-                <p>DÃ©couvrez les technologies et Ã©quipements accessibles Ã  tous.</p>
+                <h3>🔧 Outils & Solutions Existantes</h3>
+                <p>Découvrez les technologies et équipements accessibles à tous.</p>
                 <ul>
                     <li>Applications mobiles utiles</li>
-                    <li>Technologies embarquÃ©es</li>
-                    <li>Ã‰quipements de sÃ©curitÃ©</li>
+                    <li>Technologies embarquées</li>
+                    <li>Équipements de sécurité</li>
                     <li>Comparatifs et tests</li>
                 </ul>
             </div>
 
             <div class="content-card">
-                <h3>ðŸ‘” Professionnels & Entreprises</h3>
-                <p>Solutions dÃ©diÃ©es aux flottes et transports professionnels.</p>
+                <h3>📋 Ressources & Guides</h3>
+                <p>Téléchargez nos contenus pratiques et partagez-les.</p>
                 <ul>
-                    <li>PrÃ©vention pour flottes</li>
-                    <li>SÃ©curitÃ© des transports</li>
-                    <li>Bonnes pratiques mÃ©tier</li>
-                    <li>Formation des conducteurs</li>
-                </ul>
-            </div>
-
-            <div class="content-card">
-                <h3>ðŸ“‹ Ressources & Guides</h3>
-                <p>TÃ©lÃ©chargez nos contenus pratiques et partagez-les.</p>
-                <ul>
-                    <li>Infographies dÃ©taillÃ©es</li>
-                    <li>Checklists de sÃ©curitÃ©</li>
-                    <li>PDF pour Ã©coles et associations</li>
+                    <li>Infographies détaillées</li>
+                    <li>Checklists de sécurité</li>
+                    <li>PDF pour écoles et associations</li>
                     <li>Supports de formation</li>
                 </ul>
             </div>
 
             <div class="content-card">
-                <h3>ðŸŽ¯ Notre Mission</h3>
-                <p>Rendre la sÃ©curitÃ© routiÃ¨re accessible et comprÃ©hensible pour tous.</p>
+                <h3>🎯 Notre Mission</h3>
+                <p>Rendre la sécurité routière accessible et compréhensible pour tous.</p>
                 <ul>
-                    <li>Information fiable et vÃ©rifiÃ©e</li>
-                    <li>Contenu actualisÃ© chaque semaine</li>
-                    <li>Approche pÃ©dagogique</li>
-                    <li>CommunautÃ© engagÃ©e</li>
+                    <li>Information fiable et vérifiée</li>
+                    <li>Contenu actualisé chaque semaine</li>
+                    <li>Approche pédagogique</li>
+                    <li>Communauté engagée</li>
                 </ul>
             </div>
         </div>
 
         <section class="blog-posts" id="articles">
-            <h3>ðŸ“– Articles RÃ©cents</h3>
+            <h3>📖 Articles Récents</h3>
             <div class="post-grid">
                 <article class="post-card">
-                    <div class="post-image">ðŸš—</div>
+                    <div class="post-image">🚗</div>
                     <div class="post-content">
-                        <div class="post-meta">Il y a 2 jours â€¢ ActualitÃ©s</div>
-                        <h4 class="post-title">Nouveaux radars pÃ©dagogiques : efficacitÃ© prouvÃ©e</h4>
-                        <p class="post-excerpt">Une Ã©tude rÃ©cente dÃ©montre l'impact positif des nouveaux dispositifs de sensibilisation installÃ©s sur les routes secondaires...</p>
+                        <div class="post-meta">Il y a 2 jours • Actualités</div>
+                        <h4 class="post-title">Nouveaux radars pédagogiques : efficacité prouvée</h4>
+                        <p class="post-excerpt">Une étude récente démontre l'impact positif des nouveaux dispositifs de sensibilisation installés sur les routes secondaires...</p>
                     </div>
                 </article>
 
                 <article class="post-card">
-                    <div class="post-image">ðŸ›£ï¸</div>
+                    <div class="post-image">🛣️</div>
                     <div class="post-content">
-                        <div class="post-meta">Il y a 1 semaine â€¢ Conseils</div>
-                        <h4 class="post-title">Conduite hivernale : 10 rÃ©flexes essentiels</h4>
-                        <p class="post-excerpt">Avec l'arrivÃ©e de l'hiver, adaptez votre conduite aux conditions mÃ©tÃ©orologiques difficiles. Voici nos conseils d'experts...</p>
+                        <div class="post-meta">Il y a 1 semaine • Conseils</div>
+                        <h4 class="post-title">Conduite hivernale : 10 réflexes essentiels</h4>
+                        <p class="post-excerpt">Avec l'arrivée de l'hiver, adaptez votre conduite aux conditions météorologiques difficiles. Voici nos conseils d'experts...</p>
                     </div>
                 </article>
 
                 <article class="post-card">
-                    <div class="post-image">ðŸ“±</div>
+                    <div class="post-image">📱</div>
                     <div class="post-content">
-                        <div class="post-meta">Il y a 1 semaine â€¢ Outils</div>
-                        <h4 class="post-title">Top 5 des apps de navigation sÃ©curisÃ©e</h4>
-                        <p class="post-excerpt">Comparatif dÃ©taillÃ© des meilleures applications qui intÃ¨grent des fonctionnalitÃ©s de sÃ©curitÃ© routiÃ¨re avancÃ©es...</p>
+                        <div class="post-meta">Il y a 1 semaine • Outils</div>
+                        <h4 class="post-title">Top 5 des apps de navigation sécurisée</h4>
+                        <p class="post-excerpt">Comparatif détaillé des meilleures applications qui intègrent des fonctionnalités de sécurité routière avancées...</p>
                     </div>
                 </article>
 
                 <article class="post-card">
-                    <div class="post-image">ðŸ¢</div>
+                    <div class="post-image">📊</div>
                     <div class="post-content">
-                        <div class="post-meta">Il y a 2 semaines â€¢ Professionnels</div>
-                        <h4 class="post-title">Gestion de flotte : rÃ©duire les risques de 30%</h4>
-                        <p class="post-excerpt">DÃ©couvrez comment les entreprises leaders optimisent la sÃ©curitÃ© de leurs vÃ©hicules professionnels grÃ¢ce aux nouvelles technologies...</p>
+                        <div class="post-meta">Il y a 2 semaines • Ressources</div>
+                        <h4 class="post-title">Infographie : Accidents évitables en 2024</h4>
+                        <p class="post-excerpt">Visualisez les principales causes d'accidents de la route et les moyens simples de les prévenir avec notre nouvelle infographie...</p>
                     </div>
                 </article>
 
                 <article class="post-card">
-                    <div class="post-image">ðŸ“Š</div>
+                    <div class="post-image">⚡</div>
                     <div class="post-content">
-                        <div class="post-meta">Il y a 2 semaines â€¢ Ressources</div>
-                        <h4 class="post-title">Infographie : Accidents Ã©vitables en 2024</h4>
-                        <p class="post-excerpt">Visualisez les principales causes d'accidents de la route et les moyens simples de les prÃ©venir avec notre nouvelle infographie...</p>
-                    </div>
-                </article>
-
-                <article class="post-card">
-                    <div class="post-image">âš¡</div>
-                    <div class="post-content">
-                        <div class="post-meta">Il y a 3 semaines â€¢ Innovation</div>
-                        <h4 class="post-title">VÃ©hicules connectÃ©s : l'avenir de la sÃ©curitÃ©</h4>
-                        <p class="post-excerpt">Les technologies V2X rÃ©volutionnent la communication entre vÃ©hicules. Analyse des bÃ©nÃ©fices attendus pour la sÃ©curitÃ© routiÃ¨re...</p>
+                        <div class="post-meta">Il y a 3 semaines • Innovation</div>
+                        <h4 class="post-title">Véhicules connectés : l'avenir de la sécurité</h4>
+                        <p class="post-excerpt">Les technologies V2X révolutionnent la communication entre véhicules. Analyse des bénéfices attendus pour la sécurité routière...</p>
                     </div>
                 </article>
             </div>
@@ -509,9 +488,9 @@
                 <h3>4Safe+</h3>
                 <div class="plus-icon" style="width: 30px; height: 30px; font-size: 18px;">+</div>
             </div>
-            <p style="margin-top: 1rem;">Â© 2024 4Safe+ - Votre rÃ©fÃ©rence en sÃ©curitÃ© routiÃ¨re</p>
+            <p style="margin-top: 1rem;">© 2024 4Safe+ - Votre référence en sécurité routière</p>
             <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
-                Informations fiables â€¢ Conseils d'experts â€¢ Outils pratiques
+                Informations fiables • Conseils d'experts • Outils pratiques
             </p>
         </div>
     </footer>
