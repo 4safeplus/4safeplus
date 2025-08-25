@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tous les articles - 4Safe+</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS Animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f9fafb;
+      color: #333;
+    }
+
+    header {
+      background: white;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #2c5aa0;
+      margin: 0;
+    }
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      color: #333;
+    }
+    nav a:hover { color: #2c5aa0; }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    /* Articles list */
+    .post-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .post-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .post-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .post-image {
+      height: 160px;
+      background: #eef2f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+    .post-content {
+      padding: 1.2rem;
+    }
+    .post-meta {
+      font-size: 0.85rem;
+      color: #777;
+      margin-bottom: 0.5rem;
+    }
+    .post-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .post-excerpt {
+      font-size: 0.95rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>4Safe+</h1>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="articles.html">Articles</a>
+  </nav>
+</header>
+
+<section>
+  <h2>📚 Tous les articles</h2>
+  <div class="post-grid" id="post-grid">
+    <!-- Articles JSON chargés ici -->
+  </div>
+</section>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+
+<!-- Script pour charger les articles -->
+<script>
+function timeAgo(dateString) {
+    const now = new Date();
+    const date = new Date(dateString);
+    const diff = Math.floor((now - date) / (1000 * 60 * 60 * 24)); 
+    if (diff === 0) return "Aujourd'hui";
+    if (diff === 1) return "Il y a 1 jour";
+    if (diff < 7) return `Il y a ${diff} jours`;
+    if (diff < 30) return `Il y a ${Math.floor(diff/7)} semaine(s)`;
+    return date.toLocaleDateString("fr-FR");
+}
+
+fetch('articles.json')
+  .then(res => res.json())
+  .then(articles => {
+      const container = document.getElementById('post-grid');
+      container.innerHTML = '';
+
+      articles.forEach(article => {
+          const card = document.createElement('article');
+          card.className = 'post-card';
+          card.setAttribute('data-aos', 'fade-up');
+          card.innerHTML = `
+              <div class="post-image">${article.icon}</div>
+              <div class="post-content">
+                  <div class="post-meta">${timeAgo(article.date)} • ${article.category}</div>
+                  <h4 class="post-title">${article.title}</h4>
+                  <p class="post-excerpt">${article.excerpt}</p>
+              </div>
+          `;
+          container.appendChild(card);
+      });
+  });
+</script>
+
+</body>
+</html>
