@@ -27,7 +27,7 @@
       position: relative; 
     }
     .overlay {
-      background: rgba(0, 0, 0, 0.4); /* petit cadre gris/noir semi-transparent */
+      background: rgba(0, 0, 0, 0.4); /* petit cadre semi-transparent */
       color: white;
       padding: 2rem;
       border-radius: 1rem;
@@ -61,6 +61,7 @@
         <a href="#actus" class="hover:text-blue-600">Actualité & Innovation</a>
         <a href="articles.html" class="hover:text-blue-600">Articles</a>
         <a href="#outils" class="hover:text-blue-600">Outils</a>
+        <a href="#contact" class="hover:text-blue-600">Contact</a>
       </nav>
     </div>
   </header>
@@ -91,7 +92,6 @@
           </div>
         </div>
       </div>
-      <!-- Pagination et navigation -->
       <div class="swiper-pagination"></div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
@@ -123,14 +123,24 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-blue-900 text-white py-10 mt-20">
+  <!-- Footer avec Contact et Réseaux Sociaux -->
+  <footer id="contact" class="bg-blue-900 text-white py-10 mt-20">
     <div class="container mx-auto px-6 text-center">
-      <p>&copy; 2025 4Safe+ - Tous droits réservés.</p>
+      <p class="mb-4">&copy; 2025 4Safe+ - Tous droits réservés.</p>
+
+      <!-- Formulaire Contact -->
+      <form action="mailto:4safeplus@gmail.com" method="post" enctype="text/plain" class="mb-6 max-w-md mx-auto">
+        <input type="text" name="name" placeholder="Votre nom" class="w-full mb-2 px-4 py-2 rounded-lg text-gray-800" required>
+        <input type="email" name="email" placeholder="Votre email" class="w-full mb-2 px-4 py-2 rounded-lg text-gray-800" required>
+        <textarea name="message" placeholder="Votre message" class="w-full mb-2 px-4 py-2 rounded-lg text-gray-800" required></textarea>
+        <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition">Envoyer</button>
+      </form>
+
+      <!-- Réseaux sociaux -->
       <div class="flex justify-center mt-4 space-x-6">
-        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@TonCompte" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.linkedin.com/in/TonCompte" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/TonCompte" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
   </footer>
