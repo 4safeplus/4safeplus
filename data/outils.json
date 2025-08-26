@@ -1,0 +1,14 @@
+[
+  {
+    "categorie": "Simulation",
+    "nom": "Simulateur de freinage",
+    "description": "Découvrez la distance de freinage selon la vitesse et l'état de la route.",
+    "lien": "#"
+  },
+  {
+    "categorie": "Quiz",
+    "nom": "Testez vos réflexes",
+    "description": "Un petit test pour mesurer vos réflexes face aux imprévus.",
+    "lien": "#"
+  }
+]
