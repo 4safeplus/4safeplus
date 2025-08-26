@@ -1,13 +1,21 @@
-[
+t[
   {
     "categorie": "Simulation",
     "nom": "Simulateur de freinage",
     "description": "Découvrez la distance de freinage selon la vitesse et l'état de la route.",
     "lien": "#"
   },
+    {
+    "title": "Outil interactif : N'êtes-vous pas trop fatigué pour prendre le volant",
+    "date": "2025-08-12",
+    "category": "Outils & Solutions",
+    "excerpt": "Découvrez notre outil en ligne pour calculer votre score de fatigue.",
+    "image": "articles/images/outil-distance.jpg",
+    "url": "articles/outil-distance.html"
+  },
   {
     "categorie": "Quiz",
-    "nom": "Testez vos réflexes",
+    "nom": "Quel type de conducteur êtes-vous?",
     "description": "Un petit test pour mesurer vos réflexes face aux imprévus.",
     "lien": "#"
   }
