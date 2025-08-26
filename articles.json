@@ -1,25 +1,18 @@
 [
   {
-    "title": "Nouveaux radars pédagogiques en ville",
+    "title": "Lutter contre la fatigue au volant",
     "date": "2025-08-20",
     "category": "Actualités & Innovations Routières",
-    "excerpt": "Des radars pédagogiques sont installés dans plusieurs villes françaises pour sensibiliser les conducteurs.",
-    "image": "articles/images/radars.jpg",
-    "url": "articles/radars-pedagogiques.html"
+    "excerpt": "La somnolence est la deuxième cause de mortalité sur autoroute.",
+    "image": "articles/images/fatigue.jpg",
+    "url": "articles/fatigue.html"
   },
+
   {
-    "title": "Projet européen sur la mobilité durable",
-    "date": "2025-08-15",
-    "category": "Projets de Recherche",
-    "excerpt": "Un projet de recherche innovant explore l’impact de la mobilité douce sur la sécurité routière.",
-    "image": "articles/images/mobilite.jpg",
-    "url": "articles/mobilite-durable.html"
-  },
-  {
-    "title": "Outil interactif : calculez votre vitesse d’arrêt",
+    "title": "Outil interactif : N'êtes-vous pas trop fatigué pour prendre le volant",
     "date": "2025-08-12",
     "category": "Outils & Solutions",
-    "excerpt": "Découvrez notre outil en ligne pour simuler la distance d’arrêt en fonction de votre vitesse.",
+    "excerpt": "Découvrez notre outil en ligne pour calculer votre score de fatigue.",
     "image": "articles/images/outil-distance.jpg",
     "url": "articles/outil-distance.html"
   },
