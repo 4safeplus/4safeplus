@@ -8,10 +8,10 @@
   <!-- Police moderne -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Tailwind -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Swiper (slider) -->
+  <!-- Swiper CSS et JS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -33,7 +33,7 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-  <!-- ✅ Navbar moderne -->
+  <!-- Navbar -->
   <header class="bg-white shadow-md fixed w-full top-0 z-50">
     <div class="container mx-auto flex justify-between items-center py-4 px-6">
       <h1 class="text-2xl font-bold text-blue-700">4SafePlus</h1>
@@ -46,81 +46,77 @@
     </div>
   </header>
 
-  <!-- ✅ Hero avec image -->
-  <section class="relative">
+  <!-- Hero Slider -->
+  <section class="relative mt-16">
     <div class="swiper heroSwiper">
       <div class="swiper-wrapper">
-        
-        <!-- Slide 1 (ton image) -->
+        <!-- Slide 1 : Slogan principal -->
         <div class="swiper-slide hero-slide" style="background-image:url('images/hero2.jpg')">
           <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
             <div class="overlay text-center max-w-2xl">
-              <h2 class="text-4xl md:text-5xl font-bold mb-4">+ d’informations, + de sécurité</h2>
-              <p class="mb-6 text-lg">Découvrez nos articles, innovations et chiffres clés sur la sécurité routière.</p>
+              <h2 class="text-4xl md:text-5xl font-bold mb-4">La route et ses dangers</h2>
+              <p class="mb-6 text-lg">Mieux informer, mieux protéger</p>
               <a href="articles.html" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">Découvrir nos articles</a>
             </div>
           </div>
         </div>
 
+        <!-- Slide 2 : Hero3 avec message sécurité -->
+        <div class="swiper-slide hero-slide" style="background-image:url('images/hero3.jpg')">
+          <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+            <div class="overlay text-center max-w-2xl">
+              <h2 class="text-3xl md:text-4xl font-bold mb-4">90 % des accidents de la route sont dus à l’erreur humaine et pourraient être évités</h2>
+              <a href="articles.html" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">Découvrir des solutions</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- Pagination / Navigation -->
+      <!-- Pagination et navigation -->
       <div class="swiper-pagination"></div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
     </div>
   </section>
 
-  <!-- ✅ Section Actualité & Innovation -->
+  <!-- Actualité & Innovation -->
   <section id="actus" class="py-20 bg-gray-100">
     <div class="container mx-auto px-6">
       <h2 class="text-3xl font-bold text-center text-blue-700 mb-12">Actualité & Innovation</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div class="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
-          <h3 class="text-xl font-semibold mb-3">Dernières nouvelles</h3>
-          <p class="text-gray-600">Les tendances et actualités en matière de sécurité routière.</p>
+          <h3 class="text-xl font-semibold mb-3">Actualités</h3>
+          <p class="text-gray-600">Restez informé(e) des dernières tendances et évolutions en sécurité routière.</p>
         </div>
         <div class="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
-          <h3 class="text-xl font-semibold mb-3">Innovations technologiques</h3>
-          <p class="text-gray-600">Découvrez les nouveaux outils et solutions pour une route plus sûre.</p>
+          <h3 class="text-xl font-semibold mb-3">Projets de recherche</h3>
+          <p class="text-gray-600">Découvrez les travaux scientifiques qui façonnent la sécurité routière de demain.</p>
         </div>
         <div class="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
-          <h3 class="text-xl font-semibold mb-3">Chiffres clés</h3>
-          <p class="text-gray-600">Visualisez les statistiques récentes sur la sécurité routière.</p>
+          <h3 class="text-xl font-semibold mb-3">Outils</h3>
+          <p class="text-gray-600">Accédez à nos outils pratiques et interactifs pour prévenir les accidents.</p>
+        </div>
+        <div class="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
+          <h3 class="text-xl font-semibold mb-3">Notre mission</h3>
+          <p class="text-gray-600">Informer, sensibiliser et innover pour une route plus sûre pour tous.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ✅ Section Outils -->
-  <section id="outils" class="py-20">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center text-blue-700 mb-12">Nos outils</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white shadow-md rounded-xl p-6">
-          <h3 class="text-xl font-semibold mb-3">Guides pratiques</h3>
-          <p class="text-gray-600">Accédez à des ressources simples et claires pour mieux comprendre la sécurité routière.</p>
-        </div>
-        <div class="bg-white shadow-md rounded-xl p-6">
-          <h3 class="text-xl font-semibold mb-3">Outils numériques</h3>
-          <p class="text-gray-600">Explorez nos simulateurs et outils pour renforcer la prévention et la sensibilisation.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ✅ Footer -->
+  <!-- Footer -->
   <footer class="bg-blue-900 text-white py-10 mt-20">
     <div class="container mx-auto px-6 text-center">
       <p>&copy; 2025 4SafePlus - Tous droits réservés.</p>
     </div>
   </footer>
 
-  <!-- ✅ Swiper Init -->
+  <!-- Swiper Init -->
   <script>
     var swiper = new Swiper(".heroSwiper", {
       loop: true,
       pagination: { el: ".swiper-pagination", clickable: true },
       navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+      autoplay: { delay: 6000 },
     });
   </script>
 
