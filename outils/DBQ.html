@@ -1,1 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4Safe+ - Test Cognitif Conducteur Avancé</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  body { font-family: 'Inter', sans-serif; background: #f9fafb; }
+  .question-card { background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+</style>
+</head>
+<body class="p-6">
+
+<header class="text-center mb-8">
+  <h1 class="text-3xl font-bold text-blue-700">Test Cognitif Conducteur</h1>
+  <p class="text-gray-600 mt-2">Évaluez votre style de conduite et découvrez vos points à améliorer.</p>
+</header>
+
+<main class="max-w-3xl mx-auto space-y-6">
+  <form id="testForm">
+    <!-- Violations -->
+    <div class="question-card">
+      <p class="mb-2 font-semibold">1. Avez-vous tendance à dépasser la limite de vitesse ?</p>
+      <select name="v1" class="w-full p-2 rounded border">
+        <option value="0">Jamais</option>
+        <option value="1">Rarement</option>
+        <option value="2">Parfois</option>
+        <option value="3">Souvent</option>
+      </select>
+    </div>
+
+    <div class="question-card">
+      <p class="mb-2 font-semibold">2. Coupez-vous parfois la priorité ?</p>
+      <select name="v2" class="w-full p-2 rounded border">
+        <option value="0">Jamais</option>
+        <option value="1">Rarement</option>
+        <option value="2">Parfois</option>
+        <option value="3">Souvent</option>
+      </select>
+    </div>
+
+    <!-- Lapsus -->
+    <div class="question-card">
+      <p class="mb-2 font-semibold">3. Oubliez-vous parfois les clignotants ?</p>
+      <select name="l1" class="w-full p-2 rounded border">
+        <option value="0">Jamais</option>
+        <option value="1">Rarement</option>
+        <option value="2">Parfois</option>
+        <option value="3">Souvent</option>
+      </select>
+    </div>
+
+    <div class="question-card">
+      <p class="mb-2 font-semibold">4. Distrait par téléphone ou musique en conduisant ?</p>
+      <select name="l2" class="w-full p-2 rounded border">
+        <option value="0">Jamais</option>
+        <option value="1">Rarement</option>
+        <option value="2">Parfois</option>
+        <option value="3">Souvent</option>
+      </select>
+    </div>
+
+    <!-- Erreurs -->
+    <div class="question-card">
+      <p class="mb-2 font-semibold">5. Faites-vous des erreurs de jugement sur la distance ou vitesse des autres véhicules ?</p>
+      <select name="e1" class="w-full p-2 rounded border">
+        <option value="0">Jamais</option>
+        <option value="1">Rarement</option>
+        <option value="2">Parfois</option>
+        <option value="3">Souvent</option>
+      </select>
+    </div>
+
+    <div class="question-card">
+      <p class="mb-2 font-semibold">6. Mal interprétez-vous parfois les panneaux ou feux de signalisation ?</p>
+      <select name="e2" class="w-full p-2 rounded border">
+        <option value="0">Jamais</option>
+        <option value="1">Rarement</option>
+        <option value="2">Parfois</option>
+        <option value="3">Souvent</option>
+      </select>
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">Voir mon résultat</button>
+    </div>
+  </form>
+
+  <div class="mt-8">
+    <canvas id="resultChart" class="w-full h-64"></canvas>
+  </div>
+
+  <div id="resultText" class="mt-6 text-center text-xl font-semibold text-blue-700"></div>
+</main>
+
+<footer class="text-center mt-12 text-gray-500">
+  <p>Ce test est indicatif et à but informatif. Il ne remplace pas une évaluation professionnelle.</p>
+</footer>
+
+<script>
+document.getElementById('testForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const form = e.target;
+
+  const violations = parseInt(form.v1.value) + parseInt(form.v2.value);
+  const lapsus = parseInt(form.l1.value) + parseInt(form.l2.value);
+  const erreurs = parseInt(form.e1.value) + parseInt(form.e2.value);
+  const total = violations + lapsus + erreurs;
+
+  // Graphique
+  const ctx = document.getElementById('resultChart').getContext('2d');
+  if(window.barChart) window.barChart.destroy();
+  window.barChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Violations', 'Lapsus', 'Erreurs'],
+      datasets: [{
+        label: 'Score',
+        data: [violations, lapsus, erreurs],
+        backgroundColor: ['#f87171','#fbbf24','#3b82f6']
+      }]
+    },
+    options: {
+      scales: { y: { beginAtZero: true, max: 6 } }
+    }
+  });
+
+  // Message personnalisé
+  let message = '';
+  if(total <= 3){
+    message = "Profil prudent. Vous conduisez de façon sécurisée.";
+  } else if(total <= 7){
+    message = "Profil moyen. Certains comportements peuvent être améliorés.";
+  } else {
+    message = "Profil risqué. Attention, vous devez corriger certains comportements de conduite.";
+  }
+
+  document.getElementById('resultText').innerText = `Score total : ${total} - ${message}`;
+});
+</script>
+
+</body>
+</html>
 
