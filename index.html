@@ -7,78 +7,106 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <style>
-    body { font-family: 'Inter', sans-serif; background: #F3F4F6; color: #1F2937; }
-    a { text-decoration: none; color: inherit; }
+    body { font-family: 'Inter', sans-serif; background: #F9FAFB; color: #1F2937; }
+    .hero-slide { height: 85vh; background-size: cover; background-position: center; }
+    .overlay { background: rgba(0,0,0,0.55); }
   </style>
 </head>
 <body>
 
   <!-- Header -->
   <header class="bg-white shadow sticky top-0 z-50">
-    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-semibold text-blue-800">4Safe+</h1>
-      <nav class="space-x-4 text-gray-700">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-800">4Safe+</h1>
+      <nav class="space-x-6 text-gray-700 font-medium">
         <a href="index.html" class="hover:text-blue-600">Accueil</a>
+        <a href="articles.html" class="hover:text-blue-600">Actualité & Innovation</a>
         <a href="articles.html" class="hover:text-blue-600">Articles</a>
+        <a href="outils.html" class="hover:text-blue-600">Outils</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="max-w-5xl mx-auto text-center py-24 px-6" data-aos="fade-up">
-    <h2 class="text-4xl font-semibold text-green-700 mb-4">Sécurité routière, en toute confiance</h2>
-    <p class="text-lg text-gray-600 mb-8">Informations fiables, innovations et outils pratiques pour rouler en toute sérénité.</p>
-    <a href="articles.html" class="inline-block bg-green-700 text-white px-6 py-3 rounded-full font-medium hover:bg-green-600 transition">Découvrir les articles</a>
+  <!-- Hero slider -->
+  <section class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide hero-slide" style="background-image:url('https://images.unsplash.com/photo-1605559424843-7f64a98ac80a?auto=format&fit=crop&w=1600&q=80')">
+        <div class="overlay w-full h-full flex items-center justify-center text-center text-white px-6">
+          <div data-aos="fade-up">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6">+ d’informations, + de sécurité</h2>
+            <a href="articles.html" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg text-lg">Découvrir nos articles</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide hero-slide" style="background-image:url('https://images.unsplash.com/photo-1604446748923-3c178ff1a56d?auto=format&fit=crop&w=1600&q=80')">
+        <div class="overlay w-full h-full flex items-center justify-center text-center text-white px-6">
+          <div data-aos="fade-up">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6">Découvrez les innovations routières</h2>
+            <a href="articles.html" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg text-lg">Voir les innovations</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide hero-slide" style="background-image:url('https://images.unsplash.com/photo-1523861751938-12104e498b96?auto=format&fit=crop&w=1600&q=80')">
+        <div class="overlay w-full h-full flex items-center justify-center text-center text-white px-6">
+          <div data-aos="fade-up">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6">Chiffres de la sécurité routière</h2>
+            <p class="text-xl mb-6">2025 : 3 500 vies sauvées, -10% d’accidents mortels</p>
+            <a href="stats.html" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg text-lg">Voir les chiffres</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Pagination -->
+    <div class="swiper-pagination"></div>
   </section>
 
-  <!-- Catégories & articles -->
-  <div id="categories-container" class="max-w-5xl mx-auto px-6 py-16 space-y-14"></div>
+  <!-- Sections en grille -->
+  <section class="max-w-6xl mx-auto px-6 py-20 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+    <div class="bg-white rounded-xl shadow p-6 text-center hover:shadow-lg transition">
+      <h3 class="text-xl font-semibold text-blue-700 mb-3">Actualités & Innovations</h3>
+      <p class="text-gray-600 mb-4">Restez informé(e) des dernières tendances et évolutions en sécurité routière.</p>
+      <a href="articles.html" class="text-green-600 font-semibold hover:underline">Découvrir</a>
+    </div>
+    <div class="bg-white rounded-xl shadow p-6 text-center hover:shadow-lg transition">
+      <h3 class="text-xl font-semibold text-green-700 mb-3">Projets de recherche</h3>
+      <p class="text-gray-600 mb-4">Explorez les travaux scientifiques qui façonnent la route de demain.</p>
+      <a href="articles.html" class="text-green-600 font-semibold hover:underline">Explorer</a>
+    </div>
+    <div class="bg-white rounded-xl shadow p-6 text-center hover:shadow-lg transition">
+      <h3 class="text-xl font-semibold text-blue-700 mb-3">Outils & Solutions</h3>
+      <p class="text-gray-600 mb-4">Des outils interactifs pour mieux comprendre et prévenir les risques routiers.</p>
+      <a href="outils.html" class="text-green-600 font-semibold hover:underline">Tester</a>
+    </div>
+    <div class="bg-white rounded-xl shadow p-6 text-center hover:shadow-lg transition">
+      <h3 class="text-xl font-semibold text-green-700 mb-3">Notre mission</h3>
+      <p class="text-gray-600 mb-4">Un avenir où chaque accident évitable est évité grâce à l’information et l’innovation.</p>
+      <a href="articles/notre-mission.html" class="text-green-600 font-semibold hover:underline">En savoir plus</a>
+    </div>
+  </section>
 
   <!-- Footer -->
-  <footer class="bg-blue-800 text-white text-center py-12 mt-16">
-    <p>© 2025 4Safe+ – Votre référence en sécurité routière</p>
+  <footer class="bg-blue-900 text-white text-center py-10 mt-16">
+    <p>© 2025 4Safe+ – Sécurité routière et innovation</p>
   </footer>
 
+  <!-- JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ once: true });
-
-    function timeAgo(d) {
-      const diff = Math.floor((new Date() - new Date(d)) / (1000*60*60*24));
-      return diff===0 ? "Aujourd'hui" : diff===1 ? "Il y a 1 jour" : diff<7 ? `Il y a ${diff} jours` : new Date(d).toLocaleDateString('fr-FR');
-    }
-
-    fetch('articles.json')
-      .then(r => r.json())
-      .then(articles => {
-        const cats = ["Actualités & Innovations Routières","Projets de Recherche","Outils & Solutions","Notre Mission"];
-        const cont = document.getElementById('categories-container');
-
-        cats.forEach(c => {
-          const sec = document.createElement('section');
-          sec.innerHTML = `<h3 class="text-2xl font-semibold text-gray-800 mb-6">${c}</h3>
-                           <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="${c.replace(/\s/g,'-')}"></div>`;
-          cont.appendChild(sec);
-
-          const grid = document.getElementById(c.replace(/\s/g,'-'));
-          articles.filter(a => a.category === c).forEach(article => {
-            const card = document.createElement('a');
-            card.href = article.url;
-            card.className = "bg-white rounded-md shadow hover:shadow-lg transition overflow-hidden flex flex-col";
-            card.setAttribute('data-aos','fade-up');
-            card.innerHTML = `
-              <div class="h-40 bg-gray-100 flex items-center justify-center">
-                <img src="${article.image||'https://via.placeholder.com/300'}" alt="" class="object-cover h-full w-full"/>
-              </div>
-              <div class="p-4 flex-1 flex flex-col">
-                <span class="text-xs text-gray-500">${timeAgo(article.date)} • ${article.category}</span>
-                <h4 class="font-semibold text-lg mt-2 flex-1">${article.title}</h4>
-              </div>`;
-            grid.appendChild(card);
-          });
-        });
-      });
+    AOS.init({ once:true });
+    new Swiper(".mySwiper", {
+      pagination: { el: ".swiper-pagination", clickable: true },
+      autoplay: { delay: 5000 },
+      loop: true
+    });
   </script>
 </body>
 </html>
+
