@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "categorie": "Actualité",
+    "titre": "Nouveaux radars pédagogiques",
+    "resume": "Les radars pédagogiques améliorent la sécurité sur les routes...",
+    "date": "2025-08-01",
+    "lien": "articles/1.html"
+  },
+  {
+    "id": 2,
+    "categorie": "Projets",
+    "titre": "Véhicules autonomes et sécurité",
+    "resume": "Étude sur les véhicules autonomes et la réduction d'accidents...",
+    "date": "2025-07-25",
+    "lien": "articles/2.html"
+  },
+  {
+    "id": 3,
+    "categorie": "Outils",
+    "titre": "Nouvelle application de prévention",
+    "resume": "Application mobile pour suivre la sécurité routière en temps réel...",
+    "date": "2025-08-10",
+    "lien": "articles/3.html"
+  }
+]
