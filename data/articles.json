@@ -1,12 +1,14 @@
 [
+ 
   {
     "id": 1,
-    "categorie": "Actualité",
-    "titre": "Nouveaux radars pédagogiques",
-    "resume": "Les radars pédagogiques améliorent la sécurité sur les routes...",
-    "date": "2025-08-01",
-    "lien": "articles/1.html"
-  },
+    "titre": "Lutter contre la fatigue au volant",
+    "date": "2025-08-20",
+    
+    "resume": "La somnolence est la deuxième cause de mortalité sur autoroute.",
+    "image": "articles/images/fatigue.jpg",
+    "lien": "articles/fatigue.html"
+  }
   {
     "id": 2,
     "categorie": "Projets",
