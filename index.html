@@ -20,167 +20,156 @@
 
   <style>
     body { font-family: 'Inter', sans-serif; }
-    .hero-slide { 
-      background-size: cover; 
-      background-position: center; 
-      height: 90vh; 
-      position: relative; 
-    }
-    .overlay {
-      background: rgba(0, 0, 0, 0.4); /* petit cadre semi-transparent */
-      color: white;
-      padding: 2rem;
-      border-radius: 1rem;
-      text-align: center;
-    }
-    .logo-plus {
-      background-color: #28a745;
-      color: white;
-      width: 28px; height: 28px;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      margin-left: 2px;
-    }
+    .hero-slide { background-size: cover; background-position: center; height: 90vh; position: relative; }
+    .overlay { background: rgba(0, 0, 0, 0.4); color: white; padding: 2rem; border-radius: 1rem; text-align: center; }
+    .logo-plus { background-color: #28a745; color: white; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-left: 2px; }
     .social-icon { font-size: 1.5rem; transition: transform 0.3s; color:white; }
     .social-icon:hover { transform: scale(1.2); }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-  <!-- Navbar -->
-  <header class="bg-white shadow-md fixed w-full top-0 z-50">
-    <div class="container mx-auto flex justify-between items-center py-4 px-6">
-      <h1 class="text-2xl font-bold text-blue-700">
-        4Safe<span class="logo-plus">+</span>
-      </h1>
-      <nav class="space-x-6 font-medium">
-        <a href="index.html" class="hover:text-blue-600">Accueil</a>
-        <a href="#actus" class="hover:text-blue-600">Actualité & Innovation</a>
-        <a href="articles.html" class="hover:text-blue-600">Articles</a>
-        <a href="#outils" class="hover:text-blue-600">Outils</a>
-        <a href="#contact" class="hover:text-blue-600">Contact</a>
-      </nav>
-    </div>
-  </header>
+<!-- Navbar -->
+<header class="bg-white shadow-md fixed w-full top-0 z-50">
+  <div class="container mx-auto flex justify-between items-center py-4 px-6">
+    <h1 class="text-2xl font-bold text-blue-700">4Safe<span class="logo-plus">+</span></h1>
+    <nav class="space-x-6 font-medium">
+      <a href="index.html" class="hover:text-blue-600">Accueil</a>
+      <a href="#actus" class="hover:text-blue-600">Actualité & Innovation</a>
+      <a href="articles.html" class="hover:text-blue-600">Articles</a>
+      <a href="#outils" class="hover:text-blue-600">Outils</a>
+      <a href="#" id="contactBtn" class="hover:text-blue-600">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- Hero Slider -->
-  <section class="relative mt-16">
-    <div class="swiper heroSwiper">
-      <div class="swiper-wrapper">
-        <!-- Slide 1 : 90% des accidents -->
-        <div class="swiper-slide hero-slide" style="background-image:url('images/hero3.jpg')">
-          <div class="absolute inset-0 flex items-center justify-center">
-            <div class="overlay max-w-2xl">
-              <h2 class="text-3xl md:text-4xl font-bold mb-4">
-                90 % des accidents de la route sont dus à l’erreur humaine et pourraient être évités
-              </h2>
-              <a href="articles.html" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">Découvrir des solutions</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 2 : Mieux informer -->
-        <div class="swiper-slide hero-slide" style="background-image:url('images/hero2.jpg')">
-          <div class="absolute inset-0 flex items-center justify-center">
-            <div class="overlay max-w-2xl">
-              <p class="text-2xl md:text-3xl mb-6 font-semibold">Mieux informer, mieux protéger</p>
-              <a href="articles.html" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">Découvrir nos articles</a>
-            </div>
+<!-- Hero Slider -->
+<section class="relative mt-16">
+  <div class="swiper heroSwiper">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 : 90% des accidents -->
+      <div class="swiper-slide hero-slide" style="background-image:url('images/hero3.jpg')">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="overlay max-w-2xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+              90 % des accidents de la route sont dus à l’erreur humaine et pourraient être évités
+            </h2>
+            <a href="articles.html" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">Découvrir des solutions</a>
           </div>
         </div>
       </div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div>
-  </section>
-
-  <!-- Actualité & Innovation -->
-  <section id="actus" class="py-20 bg-gray-100">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center text-blue-700 mb-12">Actualité & Innovation</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
-          <h3 class="text-xl font-semibold mb-3">Actualités</h3>
-          <p class="text-gray-600">Restez informé(e) des dernières tendances et évolutions en sécurité routière.</p>
-        </div>
-        <div class="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
-          <h3 class="text-xl font-semibold mb-3">Projets de recherche</h3>
-          <p class="text-gray-600">Découvrez les travaux scientifiques qui façonnent la sécurité routière de demain.</p>
-        </div>
-        <div class="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
-          <h3 class="text-xl font-semibold mb-3">Outils</h3>
-          <p class="text-gray-600">Accédez à nos outils pratiques et interactifs pour prévenir les accidents.</p>
-        </div>
-        <div class="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
-          <h3 class="text-xl font-semibold mb-3">Notre mission</h3>
-          <p class="text-gray-600">Informer, sensibiliser et innover pour une route plus sûre pour tous.</p>
+      <!-- Slide 2 : Mieux informer -->
+      <div class="swiper-slide hero-slide" style="background-image:url('images/hero2.jpg')">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="overlay max-w-2xl">
+            <p class="text-2xl md:text-3xl mb-6 font-semibold">Mieux informer, mieux protéger</p>
+            <a href="articles.html" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">Découvrir nos articles</a>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
 
-  <!-- Footer avec Contact et Réseaux Sociaux -->
-  <footer id="contact" class="bg-blue-900 text-white py-10 mt-20">
-    <div class="container mx-auto px-6 text-center">
-      <p class="mb-4">&copy; 2025 4Safe+ - Tous droits réservés.</p>
-
-      <!-- Formulaire Contact -->
-      <form action="mailto:4safeplus@gmail.com" method="post" enctype="text/plain" class="mb-6 max-w-md mx-auto">
-        <input type="text" name="name" placeholder="Votre nom" class="w-full mb-2 px-4 py-2 rounded-lg text-gray-800" required>
-        <input type="email" name="email" placeholder="Votre email" class="w-full mb-2 px-4 py-2 rounded-lg text-gray-800" required>
-        <textarea name="message" placeholder="Votre message" class="w-full mb-2 px-4 py-2 rounded-lg text-gray-800" required></textarea>
-        <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition">Envoyer</button>
-      </form>
-
-      <!-- Réseaux sociaux -->
-      <div class="flex justify-center mt-4 space-x-6">
-        <a href="https://www.tiktok.com/@TonCompte" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
-        <a href="https://www.linkedin.com/in/TonCompte" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/TonCompte" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-      </div>
+<!-- Actualité & Innovation -->
+<section id="actus" class="py-20 bg-gray-100">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center text-blue-700 mb-12">Actualité & Innovation</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <a href="articles.html#actualite" class="block bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold mb-3">Actualités</h3>
+        <p class="text-gray-600">Découvrez la dernière actualité du site.</p>
+      </a>
+      <a href="articles.html#projets" class="block bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold mb-3">Projets de recherche</h3>
+        <p class="text-gray-600">Découvrez le projet de recherche le plus récent.</p>
+      </a>
+      <a href="articles.html#outils" class="block bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold mb-3">Outils</h3>
+        <p class="text-gray-600">Accédez au dernier outil pratique ajouté.</p>
+      </a>
+      <a href="mission.html" class="block bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold mb-3">Notre mission</h3>
+        <p class="text-gray-600">En savoir plus sur notre équipe et nos objectifs.</p>
+      </a>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <!-- Swiper Init -->
-  <script>
-    var swiper = new Swiper(".heroSwiper", {
-      loop: true,
-      effect: "fade",
-      fadeEffect: { crossFade: true },
-      autoplay: { delay: 6000 },
-      pagination: { el: ".swiper-pagination", clickable: true },
-      navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
-      on: {
-        slideChangeTransitionStart: function () {
-          document.querySelectorAll('.overlay').forEach(el => {
-            el.style.opacity = 0;
-            el.style.transform = 'translateY(20px)';
-          });
-        },
-        slideChangeTransitionEnd: function () {
-          const active = this.slides[this.activeIndex].querySelector('.overlay');
-          if (active) {
-            active.style.transition = 'all 1s ease';
-            active.style.opacity = 1;
-            active.style.transform = 'translateY(0)';
-          }
+<!-- Footer avec réseaux sociaux et modal contact -->
+<footer class="bg-blue-900 text-white py-10 mt-20">
+  <div class="container mx-auto px-6 text-center">
+    <p class="mb-4">&copy; 2025 4Safe+ - Tous droits réservés.</p>
+    <div class="flex justify-center mt-4 space-x-6">
+      <a href="https://www.tiktok.com/@TonCompte" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.linkedin.com/in/TonCompte" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/TonCompte" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- Modal Contact -->
+<div id="contactModal" class="fixed inset-0 bg-black/50 flex items-center justify-center hidden z-50">
+  <div class="bg-white rounded-xl p-6 max-w-md w-full relative">
+    <button id="closeModal" class="absolute top-3 right-3 text-gray-600">&times;</button>
+    <h2 class="text-2xl font-bold mb-4">Contactez-nous</h2>
+    <form action="mailto:tonemail@example.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Votre nom" class="w-full mb-2 px-4 py-2 rounded-lg text-gray-800" required>
+      <input type="email" name="email" placeholder="Votre email" class="w-full mb-2 px-4 py-2 rounded-lg text-gray-800" required>
+      <textarea name="message" placeholder="Votre message" class="w-full mb-2 px-4 py-2 rounded-lg text-gray-800" required></textarea>
+      <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition">Envoyer</button>
+    </form>
+  </div>
+</div>
+
+<!-- Swiper Init -->
+<script>
+  var swiper = new Swiper(".heroSwiper", {
+    loop: true,
+    effect: "fade",
+    fadeEffect: { crossFade: true },
+    autoplay: { delay: 6000 },
+    pagination: { el: ".swiper-pagination", clickable: true },
+    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+    on: {
+      slideChangeTransitionStart: function () {
+        document.querySelectorAll('.overlay').forEach(el => {
+          el.style.opacity = 0;
+          el.style.transform = 'translateY(20px)';
+        });
+      },
+      slideChangeTransitionEnd: function () {
+        const active = this.slides[this.activeIndex].querySelector('.overlay');
+        if (active) {
+          active.style.transition = 'all 1s ease';
+          active.style.opacity = 1;
+          active.style.transform = 'translateY(0)';
         }
       }
-    });
+    }
+  });
 
-    window.addEventListener('load', () => {
-      const first = document.querySelector('.swiper-slide-active .overlay');
-      if (first) {
-        first.style.transition = 'all 1s ease';
-        first.style.opacity = 1;
-        first.style.transform = 'translateY(0)';
-      }
-    });
-  </script>
+  window.addEventListener('load', () => {
+    const first = document.querySelector('.swiper-slide-active .overlay');
+    if (first) {
+      first.style.transition = 'all 1s ease';
+      first.style.opacity = 1;
+      first.style.transform = 'translateY(0)';
+    }
+  });
+
+  // Modal contact
+  const modal = document.getElementById('contactModal');
+  document.getElementById('contactBtn').addEventListener('click', e => {
+    e.preventDefault();
+    modal.classList.remove('hidden');
+  });
+  document.getElementById('closeModal').addEventListener('click', () => modal.classList.add('hidden'));
+  window.addEventListener('click', e => { if(e.target === modal) modal.classList.add('hidden'); });
+</script>
 
 </body>
 </html>
