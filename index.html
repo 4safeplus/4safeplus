@@ -20,8 +20,19 @@
 
   <style>
     body { font-family: 'Inter', sans-serif; }
-    .hero-slide { background-size: cover; background-position: center; height: 90vh; position: relative; }
-    .overlay { color: white; padding: 2rem; text-align: center; }
+    .hero-slide { 
+      background-size: cover; 
+      background-position: center; 
+      height: 90vh; 
+      position: relative; 
+    }
+    .overlay {
+      background: rgba(0, 0, 0, 0.4); /* petit cadre gris/noir semi-transparent */
+      color: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+    }
     .logo-plus {
       background-color: #28a745;
       color: white;
@@ -33,7 +44,7 @@
       font-weight: bold;
       margin-left: 2px;
     }
-    .social-icon { font-size: 1.5rem; transition: transform 0.3s; }
+    .social-icon { font-size: 1.5rem; transition: transform 0.3s; color:white; }
     .social-icon:hover { transform: scale(1.2); }
   </style>
 </head>
