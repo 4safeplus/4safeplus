@@ -78,23 +78,8 @@
 <section id="actus" class="py-20 bg-gray-100">
   <div class="container mx-auto px-6">
     <h2 class="text-3xl font-bold text-center text-blue-700 mb-12">Actualité & Innovation</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <a href="articles.html#actualite" class="block bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold mb-3">Actualités</h3>
-        <p class="text-gray-600">Découvrez la dernière actualité du site.</p>
-      </a>
-      <a href="articles.html#projets" class="block bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold mb-3">Projets de recherche</h3>
-        <p class="text-gray-600">Découvrez le projet de recherche le plus récent.</p>
-      </a>
-      <a href="articles.html#outils" class="block bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold mb-3">Outils</h3>
-        <p class="text-gray-600">Accédez au dernier outil pratique ajouté.</p>
-      </a>
-      <a href="mission.html" class="block bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
-        <h3 class="text-xl font-semibold mb-3">Notre mission</h3>
-        <p class="text-gray-600">En savoir plus sur notre équipe et nos objectifs.</p>
-      </a>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8" id="cardsContainer">
+      <!-- Les cartes seront injectées via JSON -->
     </div>
   </div>
 </section>
@@ -169,7 +154,47 @@
   });
   document.getElementById('closeModal').addEventListener('click', () => modal.classList.add('hidden'));
   window.addEventListener('click', e => { if(e.target === modal) modal.classList.add('hidden'); });
-</script>
 
+  // Load JSON articles
+  async function loadCards() {
+    try {
+      const res = await fetch('data/articles.json');
+      const data = await res.json();
+
+      const container = document.getElementById('cardsContainer');
+      container.innerHTML = '';
+
+      const categories = ['Actualité', 'Projets', 'Outils', 'Mission'];
+
+      categories.forEach(cat => {
+        let item;
+        if(cat === 'Mission') {
+          item = document.createElement('a');
+          item.href = 'mission.html';
+          item.className = "block bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition";
+          item.innerHTML = `<h3 class="text-xl font-semibold mb-3">Notre mission</h3>
+                            <p class="text-gray-600">En savoir plus sur notre équipe et nos objectifs.</p>`;
+        } else {
+          const articlesCat = data.filter(d => d.categorie === cat);
+          if(articlesCat.length > 0) {
+            const last = articlesCat[articlesCat.length - 1];
+            item = document.createElement('a');
+            item.href = last.lien;
+            item.className = "block bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition";
+            item.innerHTML = `<h3 class="text-xl font-semibold mb-3">${last.categorie}</h3>
+                              <h4 class="text-md font-semibold mb-2">${last.titre}</h4>
+                              <p class="text-gray-600">${last.resume}</p>`;
+          }
+        }
+        container.appendChild(item);
+      });
+
+    } catch (err) {
+      console.error('Erreur lors du chargement des cartes:', err);
+    }
+  }
+
+  loadCards();
+</script>
 </body>
 </html>
