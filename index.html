@@ -82,6 +82,66 @@
   </div>
 </section>
 
+<!-- Notre Mission -->
+<section id="mission" class="py-20 bg-white">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold text-blue-700 mb-6">Notre Mission</h2>
+    <p class="text-gray-700 max-w-2xl mx-auto text-lg leading-relaxed">
+      Informer, sensibiliser et innover pour une route plus sûre pour tous. Nous travaillons pour offrir des conseils fiables, des outils pratiques et des analyses basées sur la recherche afin de réduire les accidents et sauver des vies.
+    </p>
+  </div>
+</section>
+
+<script>
+async function loadCards() {
+  try {
+    const [articlesRes, outilsRes] = await Promise.all([
+      fetch('data/articles.json'),
+      fetch('data/outils.json')
+    ]);
+
+    const articles = await articlesRes.json();
+    const outils = await outilsRes.json();
+
+    const container = document.getElementById('cardsContainer');
+    container.innerHTML = '';
+
+    // Ajouter les articles (2 max par exemple)
+    articles.slice(0, 2).forEach(item => {
+      const card = document.createElement('div');
+      card.className = "bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition";
+      card.innerHTML = `
+        <h3 class="text-xl font-semibold mb-3">${item.categorie}</h3>
+        <h4 class="text-lg font-bold mb-2">${item.titre}</h4>
+        <p class="text-gray-600 mb-4">${item.resume}</p>
+        <a href="${item.lien}" class="text-blue-600 hover:underline font-medium">Lire plus</a>
+      `;
+      container.appendChild(card);
+    });
+
+    // Ajouter les outils (2 max)
+    outils.slice(0, 2).forEach(item => {
+      const card = document.createElement('div');
+      card.className = "bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition";
+      card.innerHTML = `
+        <h3 class="text-xl font-semibold mb-3">Outils</h3>
+        <h4 class="text-lg font-bold mb-2">${item.titre}</h4>
+        <p class="text-gray-600 mb-4">${item.resume}</p>
+        <a href="${item.lien}" class="text-blue-600 hover:underline font-medium">Découvrir</a>
+      `;
+      container.appendChild(card);
+    });
+
+  } catch (err) {
+    console.error('Erreur lors du chargement des cartes :', err);
+  }
+}
+
+// Appel de la fonction
+loadCards();
+</script>
+
+
 <!-- Footer avec réseaux sociaux -->
 <footer class="bg-blue-900 text-white py-10 mt-20">
   <div class="container mx-auto px-6 text-center">
