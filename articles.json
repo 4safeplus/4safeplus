@@ -1,34 +1,34 @@
 [
   {
-    "title": "Nouveaux radars pédagogiques",
+    "title": "Nouveaux radars pédagogiques en ville",
     "date": "2025-08-20",
     "category": "Actualités & Innovations Routières",
-    "excerpt": "Une étude récente démontre l'impact des radars pédagogiques sur la sécurité.",
-    "icon": "🚦",
-    "url": "articles/nom-articles.html"
+    "excerpt": "Des radars pédagogiques sont installés dans plusieurs villes françaises pour sensibiliser les conducteurs.",
+    "image": "articles/images/radars.jpg",
+    "url": "articles/radars-pedagogiques.html"
   },
   {
-    "title": "Projet de recherche sur la signalisation intelligente",
-    "date": "2025-08-18",
-    "category": "Projets de Recherche",
-    "excerpt": "Analyse de l’efficacité des panneaux connectés sur la prévention des accidents.",
-    "icon": "🔬",
-    "url": "articles/signalisation-intelligente.html"
-  },
-  {
-    "title": "Top 5 des apps de navigation sécurisée",
+    "title": "Projet européen sur la mobilité durable",
     "date": "2025-08-15",
-    "category": "Outils & Solutions",
-    "excerpt": "Comparatif des meilleures applications de navigation intégrant la sécurité routière.",
-    "icon": "📱",
-    "url": "articles/apps-navigation-securisee.html"
+    "category": "Projets de Recherche",
+    "excerpt": "Un projet de recherche innovant explore l’impact de la mobilité douce sur la sécurité routière.",
+    "image": "articles/images/mobilite.jpg",
+    "url": "articles/mobilite-durable.html"
   },
   {
-    "title": "Notre mission : rendre la sécurité routière accessible",
-    "date": "2025-08-10",
+    "title": "Outil interactif : calculez votre vitesse d’arrêt",
+    "date": "2025-08-12",
+    "category": "Outils & Solutions",
+    "excerpt": "Découvrez notre outil en ligne pour simuler la distance d’arrêt en fonction de votre vitesse.",
+    "image": "articles/images/outil-distance.jpg",
+    "url": "articles/outil-distance.html"
+  },
+  {
+    "title": "Notre mission : zéro accident évitable",
+    "date": "2025-08-01",
     "category": "Notre Mission",
-    "excerpt": "Découvrez comment nous partageons conseils et ressources pour tous.",
-    "icon": "🎯",
+    "excerpt": "Nous travaillons chaque jour pour rendre la sécurité routière accessible à tous.",
+    "image": "articles/images/mission.jpg",
     "url": "articles/notre-mission.html"
   }
 ]
