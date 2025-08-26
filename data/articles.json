@@ -2,11 +2,12 @@
  
   {
     "id": 1,
+    "categorie": "Actualité",
     "titre": "Somnolence au volant = DANGER",
     "date": "2025-08-20",
     
     "resume": "La somnolence est la deuxième cause de mortalité sur autoroute.",
-    "image": "articles/images/fatigue.jpg",
+    "image": "images/fatigue.jpg",
     "lien": "articles/fatigue.html"
   },
   {
