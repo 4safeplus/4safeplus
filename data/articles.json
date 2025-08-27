@@ -2,27 +2,35 @@
  
   {
     "id": 1,
-    "categorie": "Actualité",
-    "titre": "Somnolence au volant = DANGER",
+    "categorie": "Facteur Humain",
+    "titre": "L'inattention en voiture",
     "date": "2025-08-20",
     
-    "resume": "La somnolence est la deuxième cause de mortalité sur autoroute.",
+    "resume": "13 % des accidents de la route sont du à l'inattention.",
     "image": "images/fatigue.jpg",
     "lien": "articles/fatigue.html"
   },
   {
     "id": 2,
-    "categorie": "Projets",
-    "titre": "Véhicules autonomes et sécurité",
-    "resume": "Étude sur les véhicules autonomes et la réduction d'accidents...",
+    "categorie": "Innovation",
+    "titre": "Automatisation des tâches humaines : bonne ou mauvaise idée?",
+    "resume": "Aujourd'hui de nombreuses tâches sont automatisées. Cependant, la supervision de l'être humain est encore souvent nécessaire.",
     "date": "2025-07-25",
     "lien": "articles/2.html"
   },
   {
     "id": 3,
-    "categorie": "Outils",
-    "titre": "Nouvelle application de prévention",
-    "resume": "Application mobile pour suivre la sécurité routière en temps réel...",
+    "categorie": "Des chiffres",
+    "titre": "Accidents de trajet",
+    "resume": "Le nombre croissant d'accidents de trajet est inquiétant. Quels sont les chiffres et les facteurs de ces accidents? Peut-on les diminuer  ",
+    "date": "2025-08-10",
+    "lien": "articles/3.html"
+  },
+   {
+    "id": 3,
+    "categorie": "Facteur Humain",
+    "titre": "L'erreur humaine, c'est quoi",
+    "resume": "90 % des accidents peuvent être attribuer à l'erreur humaine. Comment est provoquée cette derniere?",
     "date": "2025-08-10",
     "lien": "articles/3.html"
   }
