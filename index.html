@@ -282,19 +282,20 @@ async function loadFrontArticles() {
 });
 
 
-    // Dernier outil (ou deux derniers outils)
-    const lastOutils = outils.slice(-1);
-    lastOutils.forEach(item => {
+   / Dernier outil uniquement
+    if (outils.length > 0) {
+      const lastTool = outils[outils.length - 1];
       const card = document.createElement('a');
-      card.href = item.lien;
+      card.href = lastTool.lien;
       card.className = "bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition block";
       card.innerHTML = `
-         ${last.image ? `<img src="${last.image}" alt="${last.titre}" class="w-full h-48 object-cover rounded-md mb-4">` : ''}
-        <h4 class="text-md font-bold mb-2"> ${last.titre}</h4>
-        <p class="text-gray-600 mb-2">${last.resume}</p>
+        ${lastTool.image ? `<img src="${lastTool.image}" alt="${lastTool.titre}" class="w-full h-48 object-cover rounded-md mb-4">` : ''}
+        <h3 class="text-lg font-semibold mb-2 text-green-700">Outils</h3>
+        <h4 class="text-md font-bold mb-2">${lastTool.titre}</h4>
+        <p class="text-gray-600 mb-2">${lastTool.resume}</p>
       `;
       container.appendChild(card);
-    });
+    }
 
   } catch(err) {
     console.error("Erreur chargement A la une :", err);
