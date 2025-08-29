@@ -146,6 +146,30 @@
   </div>
 </footer>
 
+<!-- Newsletter RGPD -->
+<section class="bg-gray-100 py-10">
+  <div class="container mx-auto px-6 text-center">
+    <h3 class="text-2xl font-bold text-blue-700 mb-4">Abonnez-vous à notre newsletter</h3>
+    <p class="text-gray-700 mb-6">Recevez les dernières actualités et articles directement dans votre boîte mail.</p>
+    <form id="newsletterForm" class="flex flex-col md:flex-row justify-center items-center gap-2 max-w-xl mx-auto">
+      <input type="email" name="email" placeholder="Votre email" required
+             class="px-4 py-2 border rounded w-full md:w-auto flex-1">
+      <label class="flex items-center gap-2 text-gray-700">
+        <input type="checkbox" name="consent" required>
+        J’accepte de recevoir la newsletter et la politique de confidentialité.
+      </label>
+      <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">
+        S'abonner
+      </button>
+    </form>
+    <p id="newsletterMessage" class="text-green-600 mt-2 hidden">Merci pour votre abonnement !</p>
+    <p class="text-gray-500 text-sm mt-2">
+      <a href="politique.html" class="underline hover:text-blue-300">Lire la politique de confidentialité</a>
+    </p>
+  </div>
+</section>
+
+
 <!-- Modal Contact -->
 <div id="contactModal" class="fixed inset-0 bg-black/50 flex items-center justify-center hidden z-50">
   <div class="bg-white rounded-xl p-6 max-w-md w-full relative">
@@ -277,6 +301,23 @@ document.addEventListener('DOMContentLoaded', () => {
   searchBtn.addEventListener('click', () => {
     const query = document.getElementById('globalSearch').value.trim();
     if(query) window.location.href = `articles.html?search=${encodeURIComponent(query)}`;
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('newsletterForm');
+  const message = document.getElementById('newsletterMessage');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const email = form.email.value.trim();
+    if(email) {
+      // Ici tu peux envoyer l'email vers ton serveur ou service newsletter
+      // Pour le test, on affiche juste le message
+      message.classList.remove('hidden');
+      form.reset();
+    }
   });
 });
 </script>
