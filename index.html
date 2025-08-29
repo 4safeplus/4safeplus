@@ -14,6 +14,8 @@
     .article-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
   </style>
 </head>
+
+
 <body class="bg-gray-50 text-gray-800">
 
 <!-- Navbar -->
@@ -28,8 +30,7 @@
       <a href="articles.html" class="hover:text-blue-600">Articles</a>
       <a href="outils.html" class="hover:text-blue-600">Outils</a>
       <a href="rd.html" class="hover:text-blue-600">R&D</a>
-      <a href="#mission" class="hover:text-blue-600">Mission</a>
-      <a href="services.html" class="hover:text-blue-600">Services</a>
+      <a href="services.html" class="hover:text-blue-600">Mission & Services</a>
       <a href="#" id="contactBtn" class="hover:text-blue-600">Contact</a>
       <input id="globalSearch" type="text" placeholder="Recherche..." class="ml-4 px-2 py-1 border rounded">
     </nav>
@@ -165,6 +166,51 @@
   });
 
 </script>
+ <!-- Modal Contact -->
+<div id="contactModal" class="fixed inset-0 bg-black/50 flex items-center justify-center hidden z-50">
+  <div class="bg-white rounded-xl p-6 max-w-md w-full relative">
+    <button id="closeModal" class="absolute top-3 right-3 text-gray-600">&times;</button>
+    <h2 class="text-2xl font-bold mb-4">Contactez-nous</h2>
+    <form action="mailto:tonemail@example.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Votre nom" class="w-full mb-2 px-4 py-2 rounded-lg text-gray-800" required>
+      <input type="email" name="email" placeholder="Votre email" class="w-full mb-2 px-4 py-2 rounded-lg text-gray-800" required>
+      <textarea name="message" placeholder="Votre message" class="w-full mb-2 px-4 py-2 rounded-lg text-gray-800" required></textarea>
+      <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition">Envoyer</button>
+    </form>
+  </div>
+</div>
+    <!-- Scripts -->
+  <script>
+    // Modal Contact
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('contactModal');
+      const contactBtn = document.getElementById('contactBtn');
+      const closeModal = document.getElementById('closeModal');
+
+      contactBtn.addEventListener('click', e => {
+        e.preventDefault();
+        modal.classList.remove('hidden');
+      });
+
+      closeModal.addEventListener('click', () => modal.classList.add('hidden'));
+
+      window.addEventListener('click', e => {
+        if(e.target === modal) modal.classList.add('hidden');
+      });
+    });
+
+    // Recherche globale
+    document.addEventListener('DOMContentLoaded', () => {
+      const globalSearch = document.getElementById('globalSearch');
+      globalSearch.addEventListener('keypress', e => {
+        if(e.key === 'Enter') {
+          e.preventDefault(); // Empêche le refresh
+          const query = globalSearch.value.trim();
+          if(query) window.location.href = `articles.html?search=${encodeURIComponent(query)}`;
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
