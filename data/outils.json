@@ -4,13 +4,14 @@
     "titre": "N'êtes-vous pas trop fatigué pour prendre le volant?",
     "date": "2025-08-12",
     "resume": "Découvrez notre outil en ligne pour calculer votre score de fatigue.",
-    "image": "articles/images/outil-distance.jpg",
+    "image": "images/hero2.jpg",
     "lien": "outils/DBQ.html"
   },
   {
     "categorie": "Quiz",
     "titre": "Quel type de conducteur êtes-vous?",
     "resume": "Un petit test pour mesurer vos réflexes face aux imprévus.",
+      "image": "images/conducteur.jpg",
     "lien": "outils/DBQ.html"
   }
 ]
