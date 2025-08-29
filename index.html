@@ -115,40 +115,45 @@
   </div>
 </section>
 
-<!-- Notre Mission -->
-<section id="mission" class="py-20 bg-white">
-  <div class="container mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold text-blue-700 mb-6">Notre Mission</h2>
-    <p class="text-gray-700 max-w-2xl mx-auto text-lg leading-relaxed">
-      Informer, sensibiliser et innover pour réduire l’impact des accidents du quotidien. 
-      Notre action s’étend à la sécurité <strong>au travail</strong>, sur la <strong>route</strong> mais aussi dans la <strong>vie domestique</strong>. 
-      Nous croyons que le <strong>facteur humain</strong> est au cœur des solutions, et nous développons des outils, des conseils et des analyses 
-      pour aider chacun à mieux comprendre ses comportements, prévenir les risques et sauver des vies.
-    </p>
+<!-- Mission + Newsletter -->
+<section class="bg-gray-100 py-16">
+  <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    
+    <!-- Bloc Mission -->
+    <div>
+      <h3 class="text-3xl font-bold text-blue-700 mb-4">Notre mission</h3>
+      <p class="text-gray-700 leading-relaxed">
+        Chez <strong>4Safe+</strong>, nous œuvrons chaque jour pour améliorer la 
+        sécurité au travail, sur la route et à la maison.  
+        Notre objectif est simple : sensibiliser, innover et 
+        partager les bonnes pratiques afin de réduire les risques 
+        et protéger ce qui compte le plus.
+      </p>
+    </div>
+
+    <!-- Bloc Newsletter -->
+    <div class="bg-white shadow-lg rounded-xl p-8">
+      <h3 class="text-2xl font-bold text-blue-700 mb-4">Abonnez-vous à notre newsletter</h3>
+      <p class="text-gray-700 mb-6">
+        Recevez les dernières actualités et articles directement dans votre boîte mail.
+      </p>
+      <form id="newsletterForm" class="flex flex-col gap-4">
+        <input type="email" name="email" placeholder="Votre email" required
+               class="px-4 py-2 border rounded w-full">
+        <label class="flex items-center gap-2 text-gray-600 text-sm">
+          <input type="checkbox" name="consent" required>
+          J’accepte de recevoir la newsletter et la <a href="politique.html" class="underline">politique de confidentialité</a>.
+        </label>
+        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">
+          S'abonner
+        </button>
+      </form>
+      <p id="newsletterMessage" class="text-green-600 mt-3 hidden">Merci pour votre abonnement !</p>
+    </div>
+
   </div>
 </section>
-<!-- Newsletter RGPD -->
-<section class="bg-gray-100 py-10">
-  <div class="container mx-auto px-6 text-center">
-    <h3 class="text-2xl font-bold text-blue-700 mb-4">Abonnez-vous à notre newsletter</h3>
-    <p class="text-gray-700 mb-6">Recevez les dernières actualités et articles directement dans votre boîte mail.</p>
-    <form id="newsletterForm" class="flex flex-col md:flex-row justify-center items-center gap-2 max-w-xl mx-auto">
-      <input type="email" name="email" placeholder="Votre email" required
-             class="px-4 py-2 border rounded w-full md:w-auto flex-1">
-      <label class="flex items-center gap-2 text-gray-700">
-        <input type="checkbox" name="consent" required>
-        J’accepte de recevoir la newsletter et la politique de confidentialité.
-      </label>
-      <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">
-        S'abonner
-      </button>
-    </form>
-    <p id="newsletterMessage" class="text-green-600 mt-2 hidden">Merci pour votre abonnement !</p>
-    <p class="text-gray-500 text-sm mt-2">
-      <a href="politique.html" class="underline hover:text-blue-300">Lire la politique de confidentialité</a>
-    </p>
-  </div>
-</section>
+
 <!-- Footer -->
 <footer class="bg-blue-900 text-white py-10 mt-20">
   <div class="container mx-auto px-6 text-center">
