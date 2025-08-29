@@ -15,6 +15,7 @@
     "categorie": "Innovation",
     "titre": "Automatisation des tâches humaines : bonne ou mauvaise idée?",
     "resume": "Aujourd'hui de nombreuses tâches sont automatisées. Cependant, la supervision de l'être humain est encore souvent nécessaire.",
+   "image": "images/hero2.jpg",
     "date": "2025-07-25",
     "lien": "articles/2.html"
   },
@@ -24,6 +25,7 @@
     "titre": "Accidents de trajet",
     "resume": "Le nombre croissant d'accidents de trajet est inquiétant. Quels sont les chiffres et les facteurs de ces accidents? Peut-on les diminuer  ",
     "date": "2025-08-10",
+   "image": "images/hero2.jpg",
     "lien": "articles/3.html"
   },
    {
@@ -32,6 +34,7 @@
     "titre": "L'erreur humaine, c'est quoi",
     "resume": "90 % des accidents peuvent être attribuer à l'erreur humaine. Comment est provoquée cette derniere?",
     "date": "2025-08-10",
+    "image": "images/hero2.jpg",
     "lien": "articles/3.html"
   }
 ]
