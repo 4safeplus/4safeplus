@@ -3,19 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>4Safe+ - Accueil</title>
+  <title>4Safe+ - Facteur Humain & Sécurité</title>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
   <style>
     body { font-family: 'Inter', sans-serif; }
+    .hero-slide { background-size: cover; background-position: center; height: 90vh; position: relative; }
+    .overlay { background: rgba(0, 0, 0, 0.4); color: white; padding: 2rem; border-radius: 1rem; text-align: center; }
     .logo-plus { background-color: #28a745; color: white; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-left: 2px; }
-    .article-card { transition: transform 0.3s, box-shadow 0.3s; }
-    .article-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+    .social-icon { font-size: 1.5rem; transition: transform 0.3s; color:white; }
+    .social-icon:hover { transform: scale(1.2); }
   </style>
 </head>
-
-
 <body class="bg-gray-50 text-gray-800">
 
 <!-- Navbar -->
@@ -25,148 +33,113 @@
       <h1 class="text-2xl font-bold text-blue-700">4Safe<span class="logo-plus">+</span></h1>
       <p class="text-gray-700 italic text-sm mt-0.5">La sécurité au travail, sur la route et à la maison</p>
     </div>
-    <nav class="space-x-4 font-medium mt-2 md:mt-0 flex items-center">
+    <nav class="flex items-center space-x-4 mt-2 md:mt-0">
       <a href="index.html" class="hover:text-blue-600">Accueil</a>
       <a href="articles.html" class="hover:text-blue-600">Articles</a>
       <a href="outils.html" class="hover:text-blue-600">Outils</a>
-      <a href="rd.html" class="hover:text-blue-600">R&D</a>
-      <a href="services.html" class="hover:text-blue-600">Mission & Services</a>
       <a href="#" id="contactBtn" class="hover:text-blue-600">Contact</a>
+      <!-- Barre de recherche -->
       <input id="globalSearch" type="text" placeholder="Recherche..." class="ml-4 px-2 py-1 border rounded">
     </nav>
   </div>
 </header>
 
-<main class="mt-20">
+<!-- Hero Slider -->
+<section class="relative mt-16">
+  <div class="swiper heroSwiper">
+    <div class="swiper-wrapper">
 
-  <!-- Hero Slider -->
-  <section class="relative">
-    <div class="swiper heroSwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide" style="background-image:url('images/chute.jpg'); background-size: cover; background-position:center; height: 90vh;">
-          <div class="flex items-center justify-center h-full">
-            <div class="bg-black/50 text-white p-6 rounded-lg text-center max-w-2xl">
-              <h2 class="text-3xl md:text-4xl font-bold mb-4">
-                En 2023, 555 803 accidents du travail avec arrêt maladie ont été déclarés en France
-              </h2>
-              <a href="https://4safeplus.github.io/4safeplus/source/Rapport_SECU2023.pdf" target="_blank" 
-                 class="bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg transition">Découvrir les chiffres</a>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide" style="background-image:url('images/error.jpg'); background-size: cover; background-position:center; height: 90vh;">
-          <div class="flex items-center justify-center h-full">
-            <div class="bg-black/50 text-white p-6 rounded-lg text-center max-w-2xl">
-              <h2 class="text-3xl md:text-4xl font-bold mb-4">
-                Jusqu'à 90 % des accidents du travail sont dus à l'erreur humaine
-              </h2>
-              <a href="outils.html" class="bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg transition">Découvrir nos solutions</a>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide" style="background-image:url('images/hero3.jpg'); background-size: cover; background-position:center; height: 90vh;">
-          <div class="flex items-center justify-center h-full">
-            <div class="bg-black/50 text-white p-6 rounded-lg text-center max-w-2xl">
-              <h2 class="text-3xl md:text-4xl font-bold mb-4">
-                Les accidents de trajet représentent 15 à 20 % des accidents du travail
-              </h2>
-              <a href="articles.html" class="bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg transition">Découvrir nos articles</a>
-            </div>
+      <div class="swiper-slide hero-slide" style="background-image:url('images/chute.jpg')">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="overlay max-w-2xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+              En 2023, 555 803 accidents du travail avec arrêt maladie ont été déclarés en France
+            </h2>
+            <a href="https://4safeplus.github.io/4safeplus/source/Rapport_SECU2023.pdf" target="_blank" 
+               class="bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">
+              Découvrir les derniers chiffres de la Sécurité Sociale
+            </a>
           </div>
         </div>
       </div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div>
-  </section>
 
-  <!-- À la une -->
-  <section class="py-20 bg-gray-100">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold text-blue-700 mb-12">À la une</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8" id="cardsContainer"></div>
-    </div>
-  </section>
+      <div class="swiper-slide hero-slide" style="background-image:url('images/error.jpg')">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="overlay max-w-2xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+              Jusqu'à 90 % des accidents du travail sont dus à l'erreur humaine
+            </h2>
+            <a href="outils.html" 
+               class="bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">
+              Découvrir nos solutions
+            </a>
+          </div>
+        </div>
+      </div>
 
-  <!-- Mission -->
-  <section id="mission" class="py-20 bg-white">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold text-blue-700 mb-6">Notre Mission</h2>
-      <p class="text-gray-700 max-w-2xl mx-auto text-lg leading-relaxed">
-        Informer, sensibiliser et innover pour réduire l’impact des accidents du quotidien. 
-        Notre action s’étend à la sécurité <strong>au travail</strong>, sur la <strong>route</strong> et dans la <strong>vie domestique</strong>.
-      </p>
-    </div>
-  </section>
+      <div class="swiper-slide hero-slide" style="background-image:url('images/hero3.jpg')">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="overlay max-w-2xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+              Les accidents de trajet représentent 15 à 20 % des accidents du travail
+            </h2>
+            <a href="articles.html" 
+               class="bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">
+              Découvrir nos articles sur le sujet
+            </a>
+          </div>
+        </div>
+      </div>
 
-</main>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
+<!-- Section A la une -->
+<section id="actus" class="py-20 bg-gray-100">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center text-blue-700 mb-12">A la une </h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8" id="cardsContainer">
+      <!-- Les cartes seront injectées via JSON -->
+    </div>
+  </div>
+</section>
+
+<!-- Notre Mission -->
+<section id="mission" class="py-20 bg-white">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold text-blue-700 mb-6">Notre Mission</h2>
+    <p class="text-gray-700 max-w-2xl mx-auto text-lg leading-relaxed">
+      Informer, sensibiliser et innover pour réduire l’impact des accidents du quotidien. 
+      Notre action s’étend à la sécurité <strong>au travail</strong>, sur la <strong>route</strong> mais aussi dans la <strong>vie domestique</strong>. 
+      Nous croyons que le <strong>facteur humain</strong> est au cœur des solutions, et nous développons des outils, des conseils et des analyses 
+      pour aider chacun à mieux comprendre ses comportements, prévenir les risques et sauver des vies.
+    </p>
+  </div>
+</section>
 
 <!-- Footer -->
-<footer class="bg-blue-900 text-white py-10 mt-20 text-center">
-  <p>&copy; 2025 4Safe+ - Tous droits réservés.</p>
-  <div class="flex justify-center mt-4 space-x-6">
-    <a href="https://www.tiktok.com" target="_blank" class="hover:text-green-400 text-2xl"><i class="fab fa-tiktok"></i></a>
-    <a href="https://www.linkedin.com" target="_blank" class="hover:text-green-400 text-2xl"><i class="fab fa-linkedin"></i></a>
-    <a href="https://www.instagram.com" target="_blank" class="hover:text-green-400 text-2xl"><i class="fab fa-instagram"></i></a>
+<footer class="bg-blue-900 text-white py-10 mt-20">
+  <div class="container mx-auto px-6 text-center">
+    <p>&copy; 2025 4Safe+ - Tous droits réservés.</p>
+    <div class="flex justify-center mt-4 space-x-6">
+      <a href="https://www.tiktok.com" target="_blank" class="text-white text-2xl hover:text-green-400">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://www.linkedin.com" target="_blank" class="text-white text-2xl hover:text-green-400">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://www.instagram.com" target="_blank" class="text-white text-2xl hover:text-green-400">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
   </div>
 </footer>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-  // Hero Slider
-  new Swiper(".heroSwiper", {
-    loop: true,
-    effect: "fade",
-    autoplay: { delay: 6000 },
-    pagination: { el: ".swiper-pagination", clickable: true },
-    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
-  });
-
-  // Load cards
-  async function loadCards() {
-    try {
-      const [articlesRes, outilsRes] = await Promise.all([
-        fetch('data/articles.json'), 
-        fetch('data/outils.json')
-      ]);
-      const articles = await articlesRes.json();
-      const outils = await outilsRes.json();
-      const container = document.getElementById('cardsContainer');
-      container.innerHTML = '';
-
-      // Articles
-      articles.slice(0,2).forEach(a => {
-        const card = document.createElement('div');
-        card.className = "bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition";
-        card.innerHTML = `<h4 class="text-lg font-bold mb-2">${a.titre}</h4>
-                          <p class="text-gray-600 mb-2">${a.resume}</p>
-                          <a href="${a.lien}" class="text-blue-600 hover:underline">Lire plus</a>`;
-        container.appendChild(card);
-      });
-
-      // Outils
-      outils.slice(0,2).forEach(o => {
-        const card = document.createElement('div');
-        card.className = "bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition";
-        card.innerHTML = `<h4 class="text-lg font-bold mb-2">${o.titre}</h4>
-                          <p class="text-gray-600 mb-2">${o.resume}</p>
-                          <a href="${o.lien}" class="text-blue-600 hover:underline">Découvrir</a>`;
-        container.appendChild(card);
-      });
-    } catch(e) { console.error(e); }
-  }
-  loadCards();
-
-  // Global search
-  document.getElementById('globalSearch').addEventListener('input', e => {
-    const query = e.target.value.toLowerCase();
-    if(query) window.location.href = `articles.html?search=${encodeURIComponent(query)}`;
-  });
-
-</script>
- <!-- Modal Contact -->
+<!-- Modal Contact -->
 <div id="contactModal" class="fixed inset-0 bg-black/50 flex items-center justify-center hidden z-50">
   <div class="bg-white rounded-xl p-6 max-w-md w-full relative">
     <button id="closeModal" class="absolute top-3 right-3 text-gray-600">&times;</button>
@@ -179,38 +152,65 @@
     </form>
   </div>
 </div>
-    <!-- Scripts -->
-  <script>
-    // Modal Contact
-    document.addEventListener('DOMContentLoaded', () => {
-      const modal = document.getElementById('contactModal');
-      const contactBtn = document.getElementById('contactBtn');
-      const closeModal = document.getElementById('closeModal');
 
-      contactBtn.addEventListener('click', e => {
-        e.preventDefault();
-        modal.classList.remove('hidden');
-      });
+<!-- FontAwesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous"/>
 
-      closeModal.addEventListener('click', () => modal.classList.add('hidden'));
+<!-- Scripts -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
 
-      window.addEventListener('click', e => {
-        if(e.target === modal) modal.classList.add('hidden');
-      });
-    });
+  // --- Modal Contact ---
+  const modal = document.getElementById('contactModal');
+  const contactBtn = document.getElementById('contactBtn');
+  const closeModal = document.getElementById('closeModal');
+  contactBtn.addEventListener('click', e => {
+    e.preventDefault();
+    modal.classList.remove('hidden');
+  });
+  closeModal.addEventListener('click', () => modal.classList.add('hidden'));
+  window.addEventListener('click', e => { if(e.target === modal) modal.classList.add('hidden'); });
 
-    // Recherche globale
-    document.addEventListener('DOMContentLoaded', () => {
-      const globalSearch = document.getElementById('globalSearch');
-      globalSearch.addEventListener('keypress', e => {
-        if(e.key === 'Enter') {
-          e.preventDefault(); // Empêche le refresh
-          const query = globalSearch.value.trim();
-          if(query) window.location.href = `articles.html?search=${encodeURIComponent(query)}`;
+  // --- Recherche globale ---
+  const globalSearch = document.getElementById('globalSearch');
+  globalSearch.addEventListener('keypress', e => {
+    if(e.key === 'Enter') {
+      e.preventDefault();
+      const query = globalSearch.value.trim();
+      if(query) window.location.href = `articles.html?search=${encodeURIComponent(query)}`;
+    }
+  });
+
+  // --- Hero Slider ---
+  var swiper = new Swiper(".heroSwiper", {
+    loop: true,
+    effect: "fade",
+    fadeEffect: { crossFade: true },
+    autoplay: { delay: 6000 },
+    pagination: { el: ".swiper-pagination", clickable: true },
+    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+    on: {
+      slideChangeTransitionStart: function () {
+        document.querySelectorAll('.overlay').forEach(el => {
+          el.style.opacity = 0;
+          el.style.transform = 'translateY(20px)';
+        });
+      },
+      slideChangeTransitionEnd: function () {
+        const active = this.slides[this.activeIndex].querySelector('.overlay');
+        if (active) {
+          active.style.transition = 'all 1s ease';
+          active.style.opacity = 1;
+          active.style.transform = 'translateY(0)';
         }
-      });
-    });
-  </script>
+      }
+    }
+  });
+  const first = document.querySelector('.swiper-slide-active .overlay');
+  if (first) { first.style.transition='all 1s ease'; first.style.opacity=1; first.style.transform='translateY(0)'; }
+
+});
+</script>
 
 </body>
 </html>
