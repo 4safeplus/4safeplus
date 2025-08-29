@@ -41,7 +41,12 @@
       <a href="services.html" class="hover:text-blue-600">Services</a>
       <a href="#" id="contactBtn" class="hover:text-blue-600">Contact</a>
       <!-- Barre de recherche -->
-      <input id="globalSearch" type="text" placeholder="Recherche..." class="ml-4 px-2 py-1 border rounded">
+    <div class="flex items-center space-x-2">
+  <input id="globalSearch" type="text" placeholder="Rechercher..." class="px-4 py-2 border rounded w-64">
+  <button id="searchBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">OK</button>
+</div>
+
+
     </nav>
   </div>
 </header>
@@ -266,5 +271,15 @@ async function loadFrontArticles() {
 
 document.addEventListener('DOMContentLoaded', loadFrontArticles);
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const searchBtn = document.getElementById('searchBtn');
+  searchBtn.addEventListener('click', () => {
+    const query = document.getElementById('globalSearch').value.trim();
+    if(query) window.location.href = `articles.html?search=${encodeURIComponent(query)}`;
+  });
+});
+</script>
+  
 </body>
 </html>
