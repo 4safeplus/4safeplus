@@ -283,7 +283,7 @@ async function loadFrontArticles() {
 
 
     // Dernier outil (ou deux derniers outils)
-    const lastOutils = outils.slice(-2);
+    const lastOutils = outils.slice(-1);
     lastOutils.forEach(item => {
       const card = document.createElement('a');
       card.href = item.lien;
