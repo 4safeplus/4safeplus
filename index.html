@@ -213,6 +213,58 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 </script>
+<script>
+async function loadFrontArticles() {
+  try {
+    // Charger articles
+    const [articlesRes, outilsRes] = await Promise.all([
+      fetch('./data/articles.json'),
+      fetch('./data/outils.json')
+    ]);
+    const articles = await articlesRes.json();
+    const outils = await outilsRes.json();
 
+    const container = document.getElementById('cardsContainer');
+    container.innerHTML = '';
+
+    const categoriesArticles = ["Facteur Humain", "Innovation", "Des chiffres"];
+    
+    // Dernier article de chaque catégorie
+    categoriesArticles.forEach(cat => {
+      const catArticles = articles.filter(a => a.categorie === cat);
+      if(catArticles.length > 0){
+        const last = catArticles[catArticles.length - 1];
+        const card = document.createElement('a');
+        card.href = last.lien;
+        card.className = "bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition block";
+        card.innerHTML = `
+          ${last.image ? `<img src="${last.image}" alt="${last.titre}" class="w-full h-48 object-cover rounded-md mb-4">` : ''}
+          <h4 class="text-md font-bold mb-2">${last.titre}</h4>
+          <p class="text-gray-600 mb-2">${last.resume}</p>
+        `;
+        container.appendChild(card);
+      }
+    });
+
+    // Dernier outil (ou deux derniers outils)
+    const lastOutils = outils.slice(-2);
+    lastOutils.forEach(item => {
+      const card = document.createElement('a');
+      card.href = item.lien;
+      card.className = "bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition block";
+      card.innerHTML = `
+        <h4 class="text-md font-bold mb-2">Outils: ${item.titre}</h4>
+        <p class="text-gray-600 mb-2">${item.resume}</p>
+      `;
+      container.appendChild(card);
+    });
+
+  } catch(err) {
+    console.error("Erreur chargement A la une :", err);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', loadFrontArticles);
+</script>
 </body>
 </html>
