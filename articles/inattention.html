@@ -130,38 +130,54 @@
   AOS.init({ once:true });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script>
+<script>
 const ctx = document.getElementById('accidentsGraph').getContext('2d');
 const accidentsGraph = new Chart(ctx, {
-    type: 'bar',
+    type: 'line',
     data: {
-        labels: ['Accidents de trajet', 'Décès', 'Indice de fréquence (pour 1000 salariés)'],
+        labels: ['2019', '2020', '2021', '2022', '2023'],
         datasets: [{
-            label: '2023',
-            data: [94023, 286, 4.5],
-            backgroundColor: [
-                'rgba(54, 162, 235, 0.7)',
-                'rgba(255, 99, 132, 0.7)',
-                'rgba(255, 206, 86, 0.7)'
-            ],
-            borderColor: [
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 99, 132, 1)',
-                'rgba(255, 206, 86, 1)'
-            ],
-            borderWidth: 1
+            label: 'Accidents de trajet',
+            data: [89278, null, 89278, null, 94023],
+            borderColor: 'rgba(54, 162, 235, 1)',
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            fill: true,
+            tension: 0.4,
+            pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+            pointRadius: 5
+        },{
+            label: 'Décès',
+            data: [270, null, 275, null, 286],
+            borderColor: 'rgba(255, 99, 132, 1)',
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            fill: true,
+            tension: 0.4,
+            pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+            pointRadius: 5
+        },{
+            label: 'Indice de fréquence (pour 1000 salariés)',
+            data: [4.2, null, 4.3, null, 4.5],
+            borderColor: 'rgba(255, 206, 86, 1)',
+            backgroundColor: 'rgba(255, 206, 86, 0.2)',
+            fill: true,
+            tension: 0.4,
+            pointBackgroundColor: 'rgba(255, 206, 86, 1)',
+            pointRadius: 5
         }]
     },
     options: {
         responsive: true,
         plugins: {
-            legend: { display: false },
+            legend: { position: 'top' },
             tooltip: { mode: 'index', intersect: false }
         },
         scales: {
             y: {
                 beginAtZero: true,
                 title: { display: true, text: 'Nombre / Indice' }
+            },
+            x: {
+                title: { display: true, text: 'Année' }
             }
         }
     }
