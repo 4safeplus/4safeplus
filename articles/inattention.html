@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>4Safe+ - Inattention au volant </title>
+  <title>4Safe+ - Inattention au volant</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
@@ -30,11 +30,91 @@
       <a href="rd.html" class="hover:text-blue-600">R&D</a>
       <a href="services.html" class="hover:text-blue-600">Services</a>
       <a href="#" id="contactBtn" class="hover:text-blue-600">Contact</a>
-      
     </nav>
   </div>
 </header>
-  <footer class="bg-blue-900 text-white py-10 mt-20 text-center">
+
+<!-- Article + Sidebar -->
+<main class="mt-28 container mx-auto px-6 grid md:grid-cols-3 gap-8">
+
+  <!-- Article Principal -->
+  <section class="md:col-span-2 bg-white rounded-xl shadow-lg p-8">
+    <h2 class="text-4xl font-bold mb-4">Inattention au volant : un danger sous-estimé qui coûte cher</h2>
+    <p class="text-gray-500 mb-6">Publié le 25 août 2025 • Catégorie : Sécurité routière</p>
+    <img src="/images/hero2.jpg" alt="Inattention au volant" class="w-full rounded-lg mb-6 object-cover">
+
+    <article class="space-y-6 text-gray-700 leading-relaxed">
+      <p>Chaque jour, des milliers de conducteurs prennent la route pour leurs trajets quotidiens, que ce soit pour aller travailler, déposer les enfants ou dans le cadre de leur activité professionnelle (chauffeurs, livraisons, déplacements professionnels, services de transport public ou routier). Pourtant, un ennemi invisible se cache derrière le volant : <strong>l’inattention</strong>.</p>
+
+      <h3 class="text-2xl font-semibold">Des chiffres alarmants</h3>
+      <p>En France, l’inattention – qu’il s’agisse de distraction (téléphone, conversation, éléments extérieurs) ou de vagabondage de la pensée – représente environ <strong>13 % des accidents mortels sur autoroute</strong>. Ces accidents concernent autant les trajets personnels que professionnels et entraînent souvent <strong>des arrêts maladie pour accidents de travail</strong>, avec un coût économique significatif pour les entreprises et la société.</p>
+
+      <h3 class="text-2xl font-semibold">Comment réduire le risque ?</h3>
+      <p>Plusieurs stratégies combinent responsabilité individuelle et actions organisationnelles :</p>
+      <ul class="list-disc list-inside space-y-2">
+        <li><strong>Auto-évaluation :</strong> des questionnaires permettent aux conducteurs d’estimer leur propension à la distraction.</li>
+        <li><strong>Tests cognitifs informatisés :</strong> inspirés de l’aéronautique, ils évaluent vigilance et temps de réaction et peuvent être utilisés par les entreprises.</li>
+        <li><strong>Monitoring et assistance :</strong> capteurs et alertes détectent les signes d’inattention et préviennent les accidents.</li>
+        <li><strong>Communication et formation :</strong> sensibilisation, consignes claires et bonnes pratiques renforcent la responsabilité individuelle.</li>
+        <li><strong>Véhicules automatisés :</strong> ils réduisent certaines erreurs, mais la vigilance reste indispensable car l’automatisation peut favoriser le vagabondage mental.</li>
+      </ul>
+
+      <h4 class="text-2xl font-semibold">Conclusion : solution multidimensionnelle</h4>
+      <p>L’inattention au volant a des conséquences économiques et sociales majeures. Grâce à des outils de mesure, des stratégies d’accompagnement et une communication adaptée, il est possible de réduire les risques et d’améliorer la sécurité. La vigilance, la formation et la prévention restent nos meilleurs alliés.</p>
+    </article>
+
+    <div class="mt-8">
+      <a href="articles.html" class="inline-block px-6 py-3 bg-blue-900 text-white rounded-full font-semibold hover:bg-blue-800 transition">⬅ Retour à tous les articles</a>
+    </div>
+  </section>
+
+  <!-- Sidebar Droite -->
+  <aside class="space-y-6">
+
+    <!-- Newsletter -->
+    <div class="bg-white shadow-lg rounded-xl p-6 text-sm">
+      <h3 class="text-xl font-bold text-blue-700 mb-2">Abonnez-vous à notre newsletter</h3>
+      <p class="text-gray-700 mb-4">Recevez nos articles et actualités directement dans votre boîte mail.</p>
+      <form id="newsletterForm" class="flex flex-col gap-2">
+        <input type="email" name="email" placeholder="Votre email" required class="px-3 py-2 border rounded w-full text-sm">
+        <label class="flex items-center gap-2 text-gray-600 text-xs">
+          <input type="checkbox" name="consent" required>
+          J’accepte de recevoir la newsletter et la <a href="politique.html" class="underline">politique de confidentialité</a>.
+        </label>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition text-sm">
+          S'abonner
+        </button>
+      </form>
+      <p id="newsletterMessage" class="text-green-600 mt-2 hidden text-xs">Merci pour votre abonnement !</p>
+    </div>
+
+    <!-- Bibliographie -->
+    <div class="bg-white shadow-lg rounded-xl p-6 text-sm">
+      <h3 class="text-xl font-bold text-blue-700 mb-2">Bibliographie</h3>
+      <ul class="list-disc list-inside text-gray-700 space-y-1">
+        <li>Singh, 2015</li>
+        <li>Regan et al., 2011</li>
+        <li>ONISR, 2022</li>
+        <li>Smallwood & Schooler, 2015</li>
+        <li>Lemercier et al., 2014</li>
+      </ul>
+    </div>
+
+    <!-- Outils recommandés -->
+    <div class="bg-white shadow-lg rounded-xl p-6 text-sm">
+      <h3 class="text-xl font-bold text-blue-700 mb-2">Outils</h3>
+      <ul class="list-disc list-inside text-gray-700 space-y-1">
+        <li>Questionnaires d’auto-évaluation vigilance</li>
+        <li>Tests cognitifs informatisés (temps de réaction)</li>
+        <li>Systèmes de monitoring et alertes conducteurs</li>
+      </ul>
+    </div>
+
+  </aside>
+</main>
+
+<!-- Footer -->
+<footer class="bg-blue-900 text-white py-10 text-center">
   <p>&copy; 2025 4Safe+ - Tous droits réservés.</p>
   <div class="flex justify-center mt-4 space-x-6">
     <a href="https://www.tiktok.com" target="_blank" class="hover:text-green-400 text-2xl"><i class="fab fa-tiktok"></i></a>
@@ -43,65 +123,9 @@
   </div>
 </footer>
 
-
-<!-- Article Hero -->
-<section class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8 my-12" data-aos="fade-up">
-  <h2 class="text-4xl font-bold mb-4">Inattention au volant : un danger sous-estimé qui coûte cher</h2>
-  <p class="text-gray-500 mb-6">Publié le 25 août 2025 • Catégorie : Exemple</p>
-  <img src="/images/hero2.jpg" alt="Image de l'article" class="w-full rounded-lg mb-6 object-cover">
-
-  <!-- Contenu -->
-  <article class="space-y-6 text-gray-700 leading-relaxed">
-    <p>Chaque jour, des milliers de conducteurs prennent la route pour leurs trajets quotidiens, que ce soit pour aller travailler, déposer les enfants ou dans le cadre de leur activité professionnelle (par exemple : chauffeurs, livraisons, déplacements professionnels, services de transport public ou routier). Pourtant, un ennemi invisible se cache derrière le volant : l’inattention.</p>
-
-    <h3 class="text-2xl font-semibold">Des chiffres</h3>
-    <p>En France, l’inattention, qu’il s’agisse de distraction (regarder son téléphone, converser, se laisser attirer par des éléments extérieurs) ou de vagabondage de la pensée – ces moments où l’esprit divague, et où le conducteur n’est plus concentré sur la route. représente environ 13 % des accidents mortels sur autoroute. Ces accidents ne concernent pas que les trajets personnels : ils impactent aussi les trajets professionnels, et sont responsables d’arrêts maladie pour accidents de travail, avec un coût économique conséquent pour les entreprises et la société..</p>
-
-    <h3 class="text-2xl font-semibold">Comment réduire le risque ?</h3>
-    <p>Il existe plusieurs stratégies pour prévenir les accidents liés à l’inattention, qui combinent responsabilité individuelle et actions organisationnelles :.</p>
-
-    <ul class="list-disc list-inside">
-      <li>Auto-évaluation
-
-Des questionnaires simples permettent aux conducteurs de mesurer leur propension à se laisser distraire ou à avoir l’esprit ailleurs.</li>
-      <li>Tests cognitifs informatisés
-
-Inspirés de l’aéronautique, ces tests évaluent la vigilance, le temps de réaction et la capacité à rester concentré, et peuvent être utilisés pour les employés des services de transport.</li>
-      <li>Monitoring et assistance
-
-Les systèmes de surveillance de la conduite (capteurs, alertes) permettent de détecter les signes d’inattention et de prévenir les accidents.</li>
-    </ul>
-    <li>
-Communication efficace et formation
-
-Les entreprises peuvent sensibiliser leurs conducteurs aux risques, transmettre des consignes claires et encourager des bonnes pratiques, tout en renforçant la responsabilité individuelle de chaque conducteur
-    </ul>
-    <li> Véhicules automatisés
-
-Les voitures avec conduite assistée peuvent aider à réduire les erreurs humaines, mais elles ne remplacent pas la vigilance. La supervision reste indispensable, car l’automatisation peut paradoxalement favoriser la mind wandering si le conducteur se repose trop sur le système.
-    </ul>
-        <h4 class="text-2xl font-semibold">Conclusion : solution multidimensionnelle</h4>
-    
-    <p>L’inattention au volant n’est pas seulement un problème individuel : elle a des conséquences économiques et sociales importantes, que ce soit pour les trajets quotidiens ou professionnels. Grâce à des outils de mesure, des stratégies d’accompagnement et une communication adaptée, il est possible de réduire les risques et d’améliorer la sécurité de tous.
-
-La vigilance, la formation et la prévention restent nos meilleurs alliés pour éviter que l’inattention ne se transforme en accident. : “Découvrez plus d’articles sur notre page Articles.”</p>
-  </article>
-
-  <div class="mt-8">
-    <a href="../articles.html" class="inline-block px-6 py-3 bg-blue-900 text-white rounded-full font-semibold hover:bg-blue-800 transition">⬅ Retour à tous les articles</a>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-gray-900 text-white text-center py-12">
-  <h3 class="text-xl font-bold">4Safe+</h3>
-  <p class="mt-2">© 2025 4Safe+ - Votre référence en sécurité routière</p>
-</footer>
-
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({ once:true });
 </script>
-
 </body>
 </html>
