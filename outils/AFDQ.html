@@ -6,14 +6,11 @@
   <title>4Safe+ - Diagnostic attentionnel</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.plotly.com/plotly-latest.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
   <style>
     body { font-family: 'Inter', sans-serif; }
-    .logo-plus { background-color: #28a745; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-left: 2px; }
-    .question-card { background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 3px 8px rgba(0,0,0,0.08); }
-    .app-card { background:#e0f2fe; border-left:4px solid #3b82f6; padding:1rem; border-radius:0.75rem; cursor:pointer; transition:0.3s; }
-    .app-card:hover { background:#bfdbfe; }
+    .logo-plus { background-color: #28a745; color: white; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-left: 2px; }
+    .result-box { display: none; }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -36,61 +33,78 @@
   </div>
 </header>
 
-<!-- Contenu -->
+<!-- Main -->
 <main class="mt-28 container mx-auto px-6 max-w-3xl">
   <section class="bg-white rounded-xl shadow-lg p-8">
-    <h2 class="text-3xl font-bold text-blue-700 mb-4">Diagnostic attentionnel du conducteur</h2>
-    <p class="text-gray-600 mb-6">Ce test inspiré de l’<em>Attention Failure During Driving Questionnaire (AFDQ)</em> [Smilek et al., 2010] vous permet d’identifier vos fragilités principales (fatigue, distraction, concentration, jugement de vitesse) et de recevoir une stratégie personnalisée.</p>
+    <h2 class="text-3xl font-bold mb-4 text-center">Diagnostic attentionnel</h2>
+    <p class="text-center text-gray-600 mb-6">Découvrez votre point faible principal et recevez une stratégie personnalisée avec l’application <strong>4Safe<span class="logo-plus">+</span></strong>.</p>
 
-    <!-- FORM -->
-    <form id="attentionForm" class="space-y-6">
-      <div class="question-card">
-        <p class="mb-2 font-semibold">1. Vous arrive-t-il d’être fatigué(e) avant de prendre le volant ?</p>
-        <select name="fatigue" class="w-full p-2 rounded border">
-          <option value="0">Jamais</option><option value="1">Rarement</option><option value="2">Parfois</option><option value="3">Souvent</option>
+    <form id="afdqForm" class="space-y-6">
+      <!-- Exemple de questions -->
+      <div>
+        <p class="font-semibold mb-2">1. Il m’arrive de fixer la route mais de ne pas me souvenir des derniers kilomètres parcourus.</p>
+        <select name="cognitive" class="w-full border rounded p-2" required>
+          <option value="">Choisissez...</option>
+          <option value="0">Jamais</option>
+          <option value="1">Rarement</option>
+          <option value="2">Parfois</option>
+          <option value="3">Souvent</option>
         </select>
       </div>
-      <div class="question-card">
-        <p class="mb-2 font-semibold">2. Votre esprit vagabonde-t-il souvent en conduisant (pensées personnelles, travail, etc.) ?</p>
-        <select name="distraction_mentale" class="w-full p-2 rounded border">
-          <option value="0">Jamais</option><option value="1">Rarement</option><option value="2">Parfois</option><option value="3">Souvent</option>
+      <div>
+        <p class="font-semibold mb-2">2. Je conduis alors que je suis fatigué(e) ou somnolent(e).</p>
+        <select name="fatigue" class="w-full border rounded p-2" required>
+          <option value="">Choisissez...</option>
+          <option value="0">Jamais</option>
+          <option value="1">Rarement</option>
+          <option value="2">Parfois</option>
+          <option value="3">Souvent</option>
         </select>
       </div>
-      <div class="question-card">
-        <p class="mb-2 font-semibold">3. Êtes-vous facilement distrait(e) par votre environnement (panneaux, passagers, musique) ?</p>
-        <select name="distraction_externe" class="w-full p-2 rounded border">
-          <option value="0">Jamais</option><option value="1">Rarement</option><option value="2">Parfois</option><option value="3">Souvent</option>
+      <div>
+        <p class="font-semibold mb-2">3. Mon esprit se met à vagabonder (pensées non liées à la conduite).</p>
+        <select name="mental" class="w-full border rounded p-2" required>
+          <option value="">Choisissez...</option>
+          <option value="0">Jamais</option>
+          <option value="1">Rarement</option>
+          <option value="2">Parfois</option>
+          <option value="3">Souvent</option>
         </select>
       </div>
-      <div class="question-card">
-        <p class="mb-2 font-semibold">4. Vous arrive-t-il de mal juger la vitesse ou la distance d’autres véhicules ?</p>
-        <select name="jugement" class="w-full p-2 rounded border">
-          <option value="0">Jamais</option><option value="1">Rarement</option><option value="2">Parfois</option><option value="3">Souvent</option>
+      <div>
+        <p class="font-semibold mb-2">4. J’ai du mal à maintenir mon attention sur la circulation dans des environnements monotones.</p>
+        <select name="concentration" class="w-full border rounded p-2" required>
+          <option value="">Choisissez...</option>
+          <option value="0">Jamais</option>
+          <option value="1">Rarement</option>
+          <option value="2">Parfois</option>
+          <option value="3">Souvent</option>
         </select>
       </div>
-      <div class="question-card">
-        <p class="mb-2 font-semibold">5. Avez-vous du mal à rester concentré(e) sur une longue durée au volant ?</p>
-        <select name="concentration" class="w-full p-2 rounded border">
-          <option value="0">Jamais</option><option value="1">Rarement</option><option value="2">Parfois</option><option value="3">Souvent</option>
+      <div>
+        <p class="font-semibold mb-2">5. J’ai du mal à estimer la vitesse des autres véhicules.</p>
+        <select name="jugement" class="w-full border rounded p-2" required>
+          <option value="">Choisissez...</option>
+          <option value="0">Jamais</option>
+          <option value="1">Rarement</option>
+          <option value="2">Parfois</option>
+          <option value="3">Souvent</option>
         </select>
       </div>
 
-      <div class="text-center">
-        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">Voir mon résultat</button>
-      </div>
+      <button type="submit" class="w-full bg-blue-700 text-white py-3 rounded-lg font-semibold hover:bg-blue-800 transition">Voir mes résultats</button>
     </form>
 
     <!-- Résultats -->
-    <div id="resultBox" class="mt-10 hidden">
-      <div id="result3D" class="h-80 mb-6"></div>
-      <div id="resultText" class="text-lg font-semibold text-blue-700 text-center mb-6"></div>
-      <div id="appBox" class="app-card text-center">
-        <p class="font-semibold">Appliquez votre stratégie personnalisée avec l’app 4Safe<span class="logo-plus">+</span> :</p>
-        <div class="flex justify-center gap-4 mt-2">
-          <a href="https://play.google.com/store" target="_blank"><img src="../images/googleplay.png" alt="Google Play" class="h-10"></a>
-          <a href="https://www.apple.com/app-store/" target="_blank"><img src="../images/appstore.png" alt="App Store" class="h-10"></a>
-        </div>
-      </div>
+    <div id="result" class="result-box mt-8 bg-gray-100 p-6 rounded-lg shadow-inner">
+      <h3 class="text-xl font-bold mb-4">Votre profil attentionnel</h3>
+      <p id="strategyText" class="text-gray-700 mb-4"></p>
+
+      <!-- Encadré App -->
+      <a href="#" class="block bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded-lg hover:bg-green-200 transition">
+        <i class="fab fa-android text-2xl mr-2"></i>
+        Téléchargez l’application <strong>4Safe<span class="logo-plus">+</span></strong> pour mettre en place votre stratégie personnalisée (rappels de pause, tests de fatigue, exercices, lien montre connectée).
+      </a>
     </div>
   </section>
 </main>
@@ -106,44 +120,30 @@
 </footer>
 
 <script>
-document.getElementById('attentionForm').addEventListener('submit', function(e){
+document.getElementById("afdqForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  // Récupération des scores
-  const form = e.target;
-  const scores = {
-    "Fatigue": parseInt(form.fatigue.value),
-    "Distraction mentale": parseInt(form.distraction_mentale.value),
-    "Distraction externe": parseInt(form.distraction_externe.value),
-    "Jugement vitesse": parseInt(form.jugement.value),
-    "Concentration": parseInt(form.concentration.value)
-  };
+  const scores = { cognitive:0, fatigue:0, mental:0, concentration:0, jugement:0 };
+  const formData = new FormData(this);
+  for (const [key, value] of formData.entries()) {
+    scores[key] += parseInt(value);
+  }
+
+  const maxKey = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
 
   const strategies = {
-    "Fatigue": "Évaluez votre niveau de fatigue avant la route et utilisez l’app pour programmer des pauses régulières.",
-    "Distraction mentale": "Pratiquez des exercices de pleine conscience et utilisez l’app pour des rappels d’ancrage.",
-    "Distraction externe": "Réduisez au maximum les distractions (mode conduite activé sur téléphone, volume réduit).",
-    "Jugement vitesse": "Travaillez votre estimation des vitesses avec des exercices visuels proposés dans l’app.",
-    "Concentration": "Faites des micro-pauses attentionnelles et testez vos réflexes via l’app avant vos trajets."
+    cognitive: "Vous êtes sensible aux distractions cognitives. Réduisez au maximum les distractions externes (téléphone, objets) et installez des rappels visuels pour rester concentré sur la route.",
+    fatigue: "Votre point faible est la fatigue. Contrôlez systématiquement votre état avant de prendre la route et utilisez l’appli pour programmer des pauses régulières et tester votre vigilance.",
+    mental: "Votre esprit vagabonde facilement. Utilisez des tâches liées à la conduite (ex. compter les véhicules) pour maintenir votre attention.",
+    concentration: "Votre difficulté principale est la concentration. Travaillez vos capacités attentionnelles avec des exercices spécifiques proposés dans l’application.",
+    jugement: "Vous avez du mal à juger la vitesse. Pratiquez des exercices d’estimation et restez vigilant aux distances de sécurité."
   };
 
-  const maxKey = Object.keys(scores).reduce((a,b) => scores[a] > scores[b] ? a : b);
-
-  // Graphique 3D simplifié (barres)
-  const trace = {
-    x: Object.keys(scores),
-    y: Object.values(scores),
-    type: 'bar',
-    marker: {color: 'rgba(59,130,246,0.8)'}
-  };
-  Plotly.newPlot('result3D', [trace], {margin:{t:20}, yaxis:{range:[0,3]}}, {displayModeBar:false});
-
-  // Texte résultat
-  document.getElementById('resultText').innerHTML =
-    `Votre fragilité principale est : <strong>${maxKey}</strong><br>${strategies[maxKey]}`;
-
-  document.getElementById('resultBox').classList.remove('hidden');
+  document.getElementById("strategyText").innerText = strategies[maxKey];
+  document.getElementById("result").style.display = "block";
+  document.getElementById("afdqForm").style.display = "none";
 });
 </script>
+
 </body>
 </html>
