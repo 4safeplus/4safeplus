@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body { font-family: 'Inter', sans-serif; }
     .logo-plus { background-color: #28a745; color: white; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-left: 2px; }
@@ -40,7 +41,7 @@
     <p class="text-center text-gray-600 mb-6">Découvrez votre point faible principal et découvrez une stratégie personnalisée avec l’application <strong>4Safe<span class="logo-plus">+</span></strong>.</p>
 
     <form id="afdqForm" class="space-y-6">
-      <!-- Exemple de questions -->
+      <!-- Questions -->
       <div>
         <p class="font-semibold mb-2">1. Il m’arrive de fixer la route mais de ne pas me souvenir des derniers kilomètres parcourus.</p>
         <select name="cognitive" class="w-full border rounded p-2" required>
@@ -100,6 +101,9 @@
       <h3 class="text-xl font-bold mb-4">Votre profil attentionnel</h3>
       <p id="strategyText" class="text-gray-700 mb-4"></p>
 
+      <!-- Graphique radar -->
+      <canvas id="radarChart" class="w-full max-h-96 mb-6"></canvas>
+
       <!-- Encadré App -->
       <a href="#" class="block bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded-lg hover:bg-green-200 transition">
         <i class="fab fa-android text-2xl mr-2"></i>
@@ -142,6 +146,35 @@ document.getElementById("afdqForm").addEventListener("submit", function(e) {
   document.getElementById("strategyText").innerText = strategies[maxKey];
   document.getElementById("result").style.display = "block";
   document.getElementById("afdqForm").style.display = "none";
+
+  // Radar chart
+  const ctx = document.getElementById("radarChart").getContext("2d");
+  new Chart(ctx, {
+    type: "radar",
+    data: {
+      labels: ["Cognitif", "Fatigue", "Mental", "Concentration", "Jugement"],
+      datasets: [{
+        label: "Votre profil",
+        data: [scores.cognitive, scores.fatigue, scores.mental, scores.concentration, scores.jugement],
+        backgroundColor: "rgba(54, 162, 235, 0.2)",
+        borderColor: "rgba(54, 162, 235, 1)",
+        pointBackgroundColor: "rgba(54, 162, 235, 1)"
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        r: {
+          beginAtZero: true,
+          min: 0,
+          max: 3,
+          ticks: { stepSize: 1 },
+          angleLines: { color: "#ddd" },
+          grid: { color: "#ccc" }
+        }
+      }
+    }
+  });
 });
 </script>
 
