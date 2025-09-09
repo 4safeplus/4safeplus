@@ -3,74 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>4Safe+ - Diagnostic profil attentionnel au Volant</title>
+<title>4Safe+ - Test d'Attention au Volant</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
 body { font-family: 'Inter', sans-serif; background: #f3f4f6; }
 .question-card { background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-.tips { background: #fffbeb; border-left: 4px solid #facc15; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem; color: #78350f; }
+.tips { background: #e0f2fe; border-left: 4px solid #3b82f6; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem; color: #1e3a8a; }
+.app-btn { display:inline-block; margin-top:1rem; padding:0.75rem 1.5rem; background:#3b82f6; color:white; border-radius:0.75rem; font-weight:600; text-decoration:none; }
 </style>
 </head>
 <body class="p-6">
 
-
+<header class="text-center mb-8">
+  <h1 class="text-3xl font-bold text-blue-700">Test d'Attention au Volant</h1>
+  <p class="text-gray-600 mt-2">Identifiez votre point faible principal et recevez une stratégie personnalisée avec l’application 4Safe+.</p>
+</header>
 
 <main class="max-w-3xl mx-auto space-y-6">
 
 <div class="tips">
-<strong>Principe :</strong> Évaluez vos points faibles et découvrez des stratégies concrètes pour rester attentif sur la route. Les résultats vous aideront à appliquer des stratégies personnalisées pour réduire le risque d’inattention.
+<strong>Conseils d'utilisation :</strong> Faites ce test avant de prendre la route. Le résultat vous donnera un seul axe de vigilance prioritaire, avec une solution concrète et un lien vers l’application mobile.
 </div>
 
 <form id="attentionForm">
-  <!-- 5 axes -->
+  <!-- 5 questions -->
   <div class="question-card">
     <p class="mb-2 font-semibold">1. Avez-vous du mal à rester concentré sur la route ?</p>
     <select name="q1" class="w-full p-2 rounded border">
-      <option value="0">Jamais</option>
-      <option value="1">Rarement</option>
-      <option value="2">Parfois</option>
-      <option value="3">Souvent</option>
+      <option value="0">Jamais</option><option value="1">Rarement</option><option value="2">Parfois</option><option value="3">Souvent</option>
     </select>
   </div>
 
   <div class="question-card">
     <p class="mb-2 font-semibold">2. Vos pensées vagabondent fréquemment en conduisant ?</p>
     <select name="q2" class="w-full p-2 rounded border">
-      <option value="0">Jamais</option>
-      <option value="1">Rarement</option>
-      <option value="2">Parfois</option>
-      <option value="3">Souvent</option>
+      <option value="0">Jamais</option><option value="1">Rarement</option><option value="2">Parfois</option><option value="3">Souvent</option>
     </select>
   </div>
 
   <div class="question-card">
     <p class="mb-2 font-semibold">3. Vous sentez-vous fatigué ou somnolent au volant ?</p>
     <select name="q3" class="w-full p-2 rounded border">
-      <option value="0">Jamais</option>
-      <option value="1">Rarement</option>
-      <option value="2">Parfois</option>
-      <option value="3">Souvent</option>
+      <option value="0">Jamais</option><option value="1">Rarement</option><option value="2">Parfois</option><option value="3">Souvent</option>
     </select>
   </div>
 
   <div class="question-card">
     <p class="mb-2 font-semibold">4. Êtes-vous facilement distrait par l’environnement, les passagers ou le téléphone ?</p>
     <select name="q4" class="w-full p-2 rounded border">
-      <option value="0">Jamais</option>
-      <option value="1">Rarement</option>
-      <option value="2">Parfois</option>
-      <option value="3">Souvent</option>
+      <option value="0">Jamais</option><option value="1">Rarement</option><option value="2">Parfois</option><option value="3">Souvent</option>
     </select>
   </div>
 
   <div class="question-card">
     <p class="mb-2 font-semibold">5. Avez-vous des difficultés à estimer la vitesse ou la distance des autres véhicules ?</p>
     <select name="q5" class="w-full p-2 rounded border">
-      <option value="0">Jamais</option>
-      <option value="1">Rarement</option>
-      <option value="2">Parfois</option>
-      <option value="3">Souvent</option>
+      <option value="0">Jamais</option><option value="1">Rarement</option><option value="2">Parfois</option><option value="3">Souvent</option>
     </select>
   </div>
 
@@ -83,7 +72,7 @@ body { font-family: 'Inter', sans-serif; background: #f3f4f6; }
   <canvas id="attentionChart" class="w-full h-64"></canvas>
 </div>
 
-<div id="resultText" class="mt-6 text-center text-xl font-semibold text-blue-700"></div>
+<div id="resultText" class="mt-6 text-center text-lg font-semibold text-blue-700"></div>
 
 <div class="mt-6 text-gray-600 text-sm">
 <p><strong>Source scientifique :</strong> Adapté de l’<em>Attention Failure During Driving Questionnaire (AFDQ)</em>, Carney, C. et al., 2019, <a href="https://pubmed.ncbi.nlm.nih.gov/30799162/" class="underline text-blue-600" target="_blank">PubMed</a>.</p>
@@ -91,7 +80,7 @@ body { font-family: 'Inter', sans-serif; background: #f3f4f6; }
 </main>
 
 <footer class="text-center mt-12 text-gray-500">
-<p>Ce test est indicatif et ne remplace pas une évaluation professionnelle.</p>
+<p>Ce test est indicatif et ne remplace pas une évaluation médicale ou professionnelle.</p>
 </footer>
 
 <script>
@@ -99,13 +88,31 @@ document.getElementById('attentionForm').addEventListener('submit', function(e){
   e.preventDefault();
   const form = e.target;
   const scores = [
-    parseInt(form.q1.value),
-    parseInt(form.q2.value),
-    parseInt(form.q3.value),
-    parseInt(form.q4.value),
-    parseInt(form.q5.value)
+    parseInt(form.q1.value), // concentration
+    parseInt(form.q2.value), // distraction mentale
+    parseInt(form.q3.value), // fatigue
+    parseInt(form.q4.value), // distractions externes
+    parseInt(form.q5.value)  // jugement vitesse
   ];
-  const total = scores.reduce((a,b)=>a+b,0);
+
+  // Trouver le profil dominant
+  const labels = ['Concentration','Distraction mentale','Fatigue','Distractions externes','Jugement vitesse'];
+  const strategies = [
+    "Travaillez vos capacités attentionnelles avec des micro-pauses et exercices ciblés.",
+    "Pratiquez des techniques de méditation active et créez un rituel de conduite.",
+    "Évaluez votre niveau de fatigue avant la route et programmez des rappels de pause.",
+    "Réduisez les distractions : téléphone silencieux, musique douce, passagers calmes.",
+    "Améliorez votre estimation des vitesses et distances avec des petits exercices visuels."
+  ];
+  const appFeatures = [
+    "Téléchargez l’app 4Safe+ pour des mini-jeux d’attention et rappels de pauses.",
+    "Téléchargez l’app 4Safe+ pour méditations guidées et tests de vigilance.",
+    "Téléchargez l’app 4Safe+ pour micro-tests de fatigue et alertes connectées.",
+    "Téléchargez l’app 4Safe+ et activez le mode anti-distractions.",
+    "Téléchargez l’app 4Safe+ pour exercices de perception et simulateurs rapides."
+  ];
+
+  const maxIndex = scores.indexOf(Math.max(...scores));
 
   // Radar chart
   const ctx = document.getElementById('attentionChart').getContext('2d');
@@ -113,38 +120,23 @@ document.getElementById('attentionForm').addEventListener('submit', function(e){
   window.radarChart = new Chart(ctx, {
     type: 'radar',
     data: {
-      labels: ['Concentration', 'Distraction mentale', 'Fatigue', 'Distractions externes', 'Jugement de vitesse'],
+      labels: labels,
       datasets: [{
         label: 'Score',
         data: scores,
         backgroundColor: 'rgba(59,130,246,0.2)',
         borderColor: 'rgba(59,130,246,1)',
-        pointBackgroundColor: 'rgba(59,130,246,1)',
-        pointRadius: 5,
-        pointHoverRadius: 7,
+        pointBackgroundColor: 'rgba(59,130,246,1)'
       }]
     },
-    options: {
-      scales: { r: { beginAtZero: true, max: 3, ticks: { stepSize: 1 } } }
-    }
+    options: { scales: { r: { beginAtZero:true, max:3 } } }
   });
 
-  // Conseils personnalisés
-  const tips = [
-    "Concentration : faire des micro-pauses, exercices de pleine conscience.",
-    "Distraction mentale : créer un rituel de conduite, planifier le trajet, petites tâches cognitives en lien avec la conduite.",
-    "Fatigue : vérifier le sommeil, faire des pauses régulières.",
-    "Distractions externes : réduire téléphone, musique, passagers.",
-    "Jugement de vitesse : exercices de perception hors circulation, repères visuels."
-  ];
-
-  let message = "<strong>Stratégies adaptées :</strong><ul>";
-  scores.forEach((s,i)=>{
-    if(s>=2) message += `<li>${tips[i]}</li>`;
-  });
-  message += "</ul>";
-
-  document.getElementById('resultText').innerHTML = message;
+  // Affichage résultat unique
+  document.getElementById('resultText').innerHTML =
+    `<p>Votre point faible principal est : <strong>${labels[maxIndex]}</strong></p>
+     <p class="mt-2">${strategies[maxIndex]}</p>
+     <a href="#" class="app-btn">${appFeatures[maxIndex]}</a>`;
 });
 </script>
 
