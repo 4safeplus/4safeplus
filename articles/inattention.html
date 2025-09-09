@@ -12,11 +12,10 @@
     .article-card { transition: transform 0.3s, box-shadow 0.3s; }
     .article-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
     .logo-plus { background-color: #28a745; color: white; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-left: 2px; }
-    canvas { max-height: 300px; } /* Réduit la taille des graphiques */
+    canvas { max-height: 300px; margin-bottom: 1.5rem; }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-
 <!-- Navbar -->
 <header class="bg-white shadow-md fixed w-full top-0 z-50">
   <div class="container mx-auto flex flex-col items-center justify-between py-4 px-6 md:flex-row">
@@ -37,26 +36,20 @@
 
 <!-- Article + Sidebar -->
 <main class="mt-28 container mx-auto px-6 grid md:grid-cols-3 gap-8">
-
   <!-- Article Principal -->
   <section class="md:col-span-2 bg-white rounded-xl shadow-lg p-8">
     <h2 class="text-4xl font-bold mb-4">Inattention au volant : un danger sous-estimé qui coûte cher</h2>
     <p class="text-gray-500 mb-6">Publié le 25 août 2025 • Catégorie : Sécurité routière</p>
     <img src="../images/hero2.jpg" alt="Inattention au volant" class="w-full rounded-lg mb-6 object-cover">
-
     <article class="space-y-6 text-gray-700 leading-relaxed">
-      <p>Chaque jour, des milliers de conducteurs prennent la route pour leurs trajets quotidiens, que ce soit pour aller travailler, déposer les enfants ou dans le cadre de leur activité professionnelle (chauffeurs, livraisons, déplacements professionnels, services de transport public ou routier). Pourtant, un ennemi invisible se cache derrière le volant : <strong>l’inattention</strong> [1].</p>
-
+      <p>Chaque jour, des milliers de conducteurs prennent la route pour leurs trajets quotidiens, que ce soit pour aller travailler, déposer les enfants ou dans le cadre de leur activité professionnelle (chauffeurs, livraisons, déplacements professionnels, services de transport public ou routier). Pourtant, un ennemi invisible se cache derrière le volant : <strong>l’inattention</strong>.</p>
       <h3 class="text-2xl font-semibold">Des chiffres alarmants</h3>
-      <p>En France, l’inattention représente environ 13 % des accidents mortels sur autoroute [2]. En 2023, la France a enregistré 94 023 accidents de trajet, 286 décès et un indice de fréquence de 4,5 accidents pour 1 000 salariés [3].</p>
-
-      <h3 class="text-2xl font-semibold">Graphiques évolutifs</h3>
-      <p>Pour visualiser clairement l’évolution, trois graphiques distincts sont utilisés :</p>
-      <canvas id="accidentsGraph" class="w-full mb-6"></canvas>
-      <canvas id="decesGraph" class="w-full mb-6"></canvas>
-      <canvas id="indiceGraph" class="w-full mb-6"></canvas>
-
-      <!-- Le reste de ton contenu (causes, comment réduire le risque, conclusion) reste inchangé -->
+      <p>En France, l’inattention représente environ 13 % des accidents mortels sur autoroute. En 2023, la France a enregistré 94 023 accidents de trajet, 286 décès et un indice de fréquence de 4,5 accidents pour 1 000 salariés.</p>
+      <!-- Graphiques distincts -->
+      <canvas id="accidentsGraph" class="w-full"></canvas>
+      <canvas id="decesGraph" class="w-full"></canvas>
+      <canvas id="indiceGraph" class="w-full"></canvas>
+      <!-- Le reste de ton contenu reste inchangé -->
     </article>
   </section>
 
@@ -85,7 +78,6 @@ new Chart(document.getElementById('accidentsGraph').getContext('2d'), {
         }]
     }
 });
-
 // Graphique décès
 new Chart(document.getElementById('decesGraph').getContext('2d'), {
     type: 'line',
@@ -102,7 +94,6 @@ new Chart(document.getElementById('decesGraph').getContext('2d'), {
         }]
     }
 });
-
 // Graphique indice de fréquence
 new Chart(document.getElementById('indiceGraph').getContext('2d'), {
     type: 'line',
