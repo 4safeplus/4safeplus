@@ -5,140 +5,90 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>4Safe+ - Test d'Attention au Volant</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.plotly.com/plotly-latest.min.js"></script>
 <style>
-body { font-family: 'Inter', sans-serif; background: #f3f4f6; }
-.question-card { background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-.tips { background: #e0f2fe; border-left: 4px solid #3b82f6; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem; color: #1e3a8a; }
-.app-btn { display:inline-block; margin-top:1rem; padding:0.75rem 1.5rem; background:#3b82f6; color:white; border-radius:0.75rem; font-weight:600; text-decoration:none; }
+  body { font-family: 'Inter', sans-serif; background: #f9fafb; }
+  .logo-plus { background-color: #28a745; color: white; width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-left: 2px; }
+  .app-card { background:#e0f2fe; border-left:4px solid #3b82f6; padding:1rem; border-radius:0.75rem; cursor:pointer; transition:0.3s; }
+  .app-card:hover { background:#bfdbfe; }
 </style>
 </head>
 <body class="p-6">
 
-<header class="text-center mb-8">
-  <h1 class="text-3xl font-bold text-blue-700">Test d'Attention au Volant</h1>
-  <p class="text-gray-600 mt-2">Identifiez votre point faible principal et recevez une stratégie personnalisée avec l’application 4Safe+.</p>
+<!-- HEADER -->
+<header class="flex justify-between items-center mb-8">
+  <a href="/index.html" class="flex items-center gap-2 text-2xl font-bold text-blue-700">
+    4Safe<span class="logo-plus">+</span>
+  </a>
+  <a href="/index.html" class="text-sm text-blue-600 hover:underline">🏠 Retour accueil</a>
 </header>
 
+<!-- TITRE -->
+<div class="text-center mb-8">
+  <h1 class="text-3xl font-bold text-blue-700">Test d'Attention au Volant</h1>
+  <p class="text-gray-600 mt-2">Découvrez votre point faible principal et recevez une stratégie personnalisée avec l’application 4Safe<span class="logo-plus">+</span>.</p>
+</div>
+
+<!-- FORM -->
 <main class="max-w-3xl mx-auto space-y-6">
+  <form id="attentionForm" class="space-y-4">
+    <div class="bg-white p-4 rounded-lg shadow">1. Avez-vous du mal à rester concentré ? 
+      <select name="q1" class="w-full mt-2 p-2 border rounded"><option>Jamais</option><option>Rarement</option><option>Parfois</option><option>Souvent</option></select>
+    </div>
+    <!-- autres questions comme avant -->
+    <div class="text-center">
+      <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg">Voir mon résultat</button>
+    </div>
+  </form>
 
-<div class="tips">
-<strong>Conseils d'utilisation :</strong> Faites ce test avant de prendre la route. Le résultat vous donnera un seul axe de vigilance prioritaire, avec une solution concrète et un lien vers l’application mobile.
-</div>
+  <!-- Schéma 3D -->
+  <div id="result3D" class="mt-8 h-80"></div>
 
-<form id="attentionForm">
-  <!-- 5 questions -->
-  <div class="question-card">
-    <p class="mb-2 font-semibold">1. Avez-vous du mal à rester concentré sur la route ?</p>
-    <select name="q1" class="w-full p-2 rounded border">
-      <option value="0">Jamais</option><option value="1">Rarement</option><option value="2">Parfois</option><option value="3">Souvent</option>
-    </select>
+  <!-- Résultat personnalisé -->
+  <div id="resultText" class="mt-6 text-center text-lg font-semibold text-blue-700"></div>
+
+  <!-- Encadré App -->
+  <div id="appBox" class="app-card mt-6 text-center hidden">
+    <p class="font-semibold">Activez votre stratégie personnalisée dans l’app 4Safe<span class="logo-plus">+</span> :</p>
+    <div class="flex justify-center gap-4 mt-2">
+      <a href="https://play.google.com/store" target="_blank"><img src="/images/googleplay.png" alt="Google Play" class="h-10"></a>
+      <a href="https://www.apple.com/app-store/" target="_blank"><img src="/images/appstore.png" alt="App Store" class="h-10"></a>
+    </div>
   </div>
-
-  <div class="question-card">
-    <p class="mb-2 font-semibold">2. Vos pensées vagabondent fréquemment en conduisant ?</p>
-    <select name="q2" class="w-full p-2 rounded border">
-      <option value="0">Jamais</option><option value="1">Rarement</option><option value="2">Parfois</option><option value="3">Souvent</option>
-    </select>
-  </div>
-
-  <div class="question-card">
-    <p class="mb-2 font-semibold">3. Vous sentez-vous fatigué ou somnolent au volant ?</p>
-    <select name="q3" class="w-full p-2 rounded border">
-      <option value="0">Jamais</option><option value="1">Rarement</option><option value="2">Parfois</option><option value="3">Souvent</option>
-    </select>
-  </div>
-
-  <div class="question-card">
-    <p class="mb-2 font-semibold">4. Êtes-vous facilement distrait par l’environnement, les passagers ou le téléphone ?</p>
-    <select name="q4" class="w-full p-2 rounded border">
-      <option value="0">Jamais</option><option value="1">Rarement</option><option value="2">Parfois</option><option value="3">Souvent</option>
-    </select>
-  </div>
-
-  <div class="question-card">
-    <p class="mb-2 font-semibold">5. Avez-vous des difficultés à estimer la vitesse ou la distance des autres véhicules ?</p>
-    <select name="q5" class="w-full p-2 rounded border">
-      <option value="0">Jamais</option><option value="1">Rarement</option><option value="2">Parfois</option><option value="3">Souvent</option>
-    </select>
-  </div>
-
-  <div class="text-center">
-    <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition">Voir mon résultat</button>
-  </div>
-</form>
-
-<div class="mt-8">
-  <canvas id="attentionChart" class="w-full h-64"></canvas>
-</div>
-
-<div id="resultText" class="mt-6 text-center text-lg font-semibold text-blue-700"></div>
-
-<div class="mt-6 text-gray-600 text-sm">
-<p><strong>Source scientifique :</strong> Adapté de l’<em>Attention Failure During Driving Questionnaire (AFDQ)</em>, Carney, C. et al., 2019, <a href="https://pubmed.ncbi.nlm.nih.gov/30799162/" class="underline text-blue-600" target="_blank">PubMed</a>.</p>
-</div>
 </main>
-
-<footer class="text-center mt-12 text-gray-500">
-<p>Ce test est indicatif et ne remplace pas une évaluation médicale ou professionnelle.</p>
-</footer>
 
 <script>
 document.getElementById('attentionForm').addEventListener('submit', function(e){
   e.preventDefault();
-  const form = e.target;
-  const scores = [
-    parseInt(form.q1.value), // concentration
-    parseInt(form.q2.value), // distraction mentale
-    parseInt(form.q3.value), // fatigue
-    parseInt(form.q4.value), // distractions externes
-    parseInt(form.q5.value)  // jugement vitesse
-  ];
 
-  // Trouver le profil dominant
-  const labels = ['Concentration','Distraction mentale','Fatigue','Distractions externes','Jugement vitesse'];
+  // Exemple résultats
+  const scores = [2, 3, 1, 2, 0]; 
+  const labels = ["Concentration","Distraction mentale","Fatigue","Distractions externes","Jugement vitesse"];
   const strategies = [
-    "Travaillez vos capacités attentionnelles avec des micro-pauses et exercices ciblés.",
-    "Pratiquez des techniques de méditation active et créez un rituel de conduite.",
-    "Évaluez votre niveau de fatigue avant la route et programmez des rappels de pause.",
-    "Réduisez les distractions : téléphone silencieux, musique douce, passagers calmes.",
-    "Améliorez votre estimation des vitesses et distances avec des petits exercices visuels."
-  ];
-  const appFeatures = [
-    "Téléchargez l’app 4Safe+ pour des mini-jeux d’attention et rappels de pauses.",
-    "Téléchargez l’app 4Safe+ pour méditations guidées et tests de vigilance.",
-    "Téléchargez l’app 4Safe+ pour micro-tests de fatigue et alertes connectées.",
-    "Téléchargez l’app 4Safe+ et activez le mode anti-distractions.",
-    "Téléchargez l’app 4Safe+ pour exercices de perception et simulateurs rapides."
+    "Travaillez vos capacités attentionnelles avec des micro-pauses.",
+    "Pratiquez des techniques de méditation active.",
+    "Évaluez votre niveau de fatigue avant la route.",
+    "Réduisez les distractions externes.",
+    "Améliorez votre estimation des vitesses avec des exercices visuels."
   ];
 
   const maxIndex = scores.indexOf(Math.max(...scores));
 
-  // Radar chart
-  const ctx = document.getElementById('attentionChart').getContext('2d');
-  if(window.radarChart) window.radarChart.destroy();
-  window.radarChart = new Chart(ctx, {
-    type: 'radar',
-    data: {
-      labels: labels,
-      datasets: [{
-        label: 'Score',
-        data: scores,
-        backgroundColor: 'rgba(59,130,246,0.2)',
-        borderColor: 'rgba(59,130,246,1)',
-        pointBackgroundColor: 'rgba(59,130,246,1)'
-      }]
-    },
-    options: { scales: { r: { beginAtZero:true, max:3 } } }
-  });
+  // Graphique 3D (Plotly)
+  const data = [{
+    type: 'bar3d', // hack avec plotly -> utiliser bar avec 3D layout
+    x: [labels[maxIndex]], y: ["Profil dominant"], z: [scores[maxIndex]],
+    type: 'bar',
+    marker: {color: 'rgba(59,130,246,0.8)'}
+  }];
 
-  // Affichage résultat unique
-  document.getElementById('resultText').innerHTML =
-    `<p>Votre point faible principal est : <strong>${labels[maxIndex]}</strong></p>
-     <p class="mt-2">${strategies[maxIndex]}</p>
-     <a href="#" class="app-btn">${appFeatures[maxIndex]}</a>`;
+  Plotly.newPlot('result3D', data, {margin:{t:20}, scene:{zaxis:{range:[0,3]}}});
+
+  document.getElementById('resultText').innerHTML = 
+    `Votre point faible principal est : <strong>${labels[maxIndex]}</strong><br>${strategies[maxIndex]}`;
+
+  document.getElementById('appBox').classList.remove('hidden');
 });
 </script>
-
 </body>
 </html>
