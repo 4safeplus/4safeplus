@@ -1,8 +1,8 @@
 [
      {
     "categorie": "Test",
-    "titre": "défaillances attentionnelles spécifiques à la conduite",
-    "resume": "Ce questionnaire évalue les défaillances attentionnelles spécifiques à la conduite, telles que la distraction, la somnolence ou la surcharge cognitive.",
+    "titre": "diagnostic profil attentionnel au volant",
+    "resume": "Ce questionnaire évalue le profil attentionnel des conducteurs afin de déterminer si ils sont plus inattentifs à cause de distraction mentale ou externe, de la fatigue ou de la surcharge cognitive.",
       "image": "images/conducteur.jpg",
     "lien": "outils/AFDQ.html"
   },
